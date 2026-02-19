@@ -51,6 +51,8 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
           whileHover={{ scale: 1.08 }}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
           className="w-full h-full object-cover"
+          width={'100%'}
+          height={'100%'}
           loading="eager"
           fetchPriority="high"
         />

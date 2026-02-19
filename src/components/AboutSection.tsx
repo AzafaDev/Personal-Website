@@ -92,6 +92,8 @@ const AboutSection = () => {
                 className="rounded-xl grayscale hover:grayscale-0 transition duration-700 object-cover w-full h-112.5"
                 loading="eager"
                 fetchPriority="high"
+                width={'100%'}
+                height={'450px'}
               />
             </div>
 

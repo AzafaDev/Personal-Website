@@ -125,6 +125,8 @@ const HeroSection = () => {
                 className="w-full h-full object-cover grayscale hover:grayscale-0 opacity-80 group-hover:opacity-100 transition-all duration-700"
                 loading="eager"
                 fetchPriority="high"
+                width={'100%'}
+                height={'100%'}
               />
             </motion.div>
 

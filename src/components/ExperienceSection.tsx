@@ -148,6 +148,8 @@ const ExperienceSection = () => {
                       className="size-12 rounded-full border border-[#4584f7]/50"
                       loading="eager"
                       fetchPriority="high"
+                      width={'48px'}
+                      height={'48px'}
                     />
                     <div>
                       <h4 className="font-bold text-white leading-none mb-1">
