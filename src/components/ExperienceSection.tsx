@@ -28,13 +28,13 @@ const ExperienceSection = () => {
       name: "Sarah Johnson",
       role: "CEO at CloudScale",
       text: "Akmal adalah developer yang sangat detail. Solusi yang diberikan tidak hanya menyelesaikan masalah, tapi juga memikirkan skalabilitas ke depan.",
-      img: "https://i.pravatar.cc/150?u=sarah",
+      img: "/sarah.webp",
     },
     {
       name: "Budi Santoso",
       role: "Project Manager",
       text: "Komunikasinya sangat jelas. Project selesai lebih cepat dari deadline dengan kualitas kode yang sangat rapi.",
-      img: "https://i.pravatar.cc/150?u=budi",
+      img: "/budi.webp",
     },
   ];
 
@@ -42,7 +42,6 @@ const ExperienceSection = () => {
     <section id="experience" className="w-full py-24 bg-[#0a0a0a] text-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-          {/* Left Side: Experience Timeline */}
           <div>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -59,7 +58,6 @@ const ExperienceSection = () => {
             </motion.div>
 
             <div className="space-y-8 relative">
-              {/* Garis Tengah Timeline */}
               <div className="absolute left-4.5 top-0 bottom-0 w-px bg-white/10" />
 
               {experiences.map((exp, idx) => (
@@ -75,7 +73,6 @@ const ExperienceSection = () => {
                   }}
                   className="relative pl-12"
                 >
-                  {/* Dot Indikator */}
                   <div className="absolute left-0 top-1.5 size-9 bg-[#111] border border-white/10 rounded-full flex items-center justify-center z-10 group-hover:border-[#4584f7] transition-colors">
                     <Briefcase className="size-4 text-[#4584f7]" />
                   </div>
