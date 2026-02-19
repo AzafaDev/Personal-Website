@@ -1,10 +1,12 @@
 import { Terminal, Menu, X, ArrowRight, PhoneCall } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -119,8 +121,13 @@ const Navbar = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1 }}
                   href={item.link}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-gray-300 hover:text-[#4584f7] transition-colors flex justify-between items-center group"
+                  onClick={(e) => {
+                    navigate(item.link);
+                    setTimeout(() => {
+                      setIsOpen(false);
+                    }, 300);
+                  }}
+                  className="text-lg font-medium text-gray-300 hover:text-[#4584f7] transition-colors flex justify-between items-center group py-2" // Tambah padding biar gampang diklik jari
                   aria-label={item.name}
                 >
                   {item.name}
