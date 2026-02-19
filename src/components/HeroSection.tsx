@@ -79,17 +79,18 @@ const HeroSection = () => {
           >
             <a
               href="#portfolio"
-              className="group relative flex items-center gap-3 bg-[#4584f7] px-8 py-4 rounded-2xl font-bold transition-all duration-300 hover:bg-[#3b72d1] hover:shadow-[0_20px_40px_rgba(69,132,247,0.3)] hover:-translate-y-1"
+              className="group relative flex items-center gap-3 bg-[hsl(219,92%,42%)] px-8 py-4 rounded-2xl font-bold transition-all duration-300 hover:bg-[hsl(218,62%,33%)] hover:shadow-[0_20px_40px_rgba(69,132,247,0.3)] hover:-translate-y-1"
+              aria-label="portfolio-link"
             >
               View Portfolio
               <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
             </a>
-
             <div className="flex items-center gap-5">
               <a
                 href="https://github.com/AzafaDev"
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-transform hover:scale-110"
+                aria-label="github-link"
               >
                 <Github className="size-6" />
               </a>
@@ -97,6 +98,7 @@ const HeroSection = () => {
                 href="https://www.linkedin.com/in/akmal-dzakwan-faiz-0bb98839b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-transform hover:scale-110"
+                aria-label="linkedin-link"
               >
                 <Linkedin className="size-6" />
               </a>

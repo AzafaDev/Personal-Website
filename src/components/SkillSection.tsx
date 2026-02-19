@@ -1,32 +1,32 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const TechSection = () => {
   const technologies = [
     {
-      category: 'Frontend',
+      category: "Frontend",
       skills: [
-        { name: 'React', level: 'Advanced', icon: '⚛️' },
-        { name: 'Next.js', level: 'Intermediate', icon: '▲' },
-        { name: 'Tailwind CSS', level: 'Advanced', icon: '🌊' },
-        { name: 'TypeScript', level: 'Intermediate', icon: '🟦' },
+        { name: "React", level: "Advanced", icon: "⚛️" },
+        { name: "Next.js", level: "Intermediate", icon: "▲" },
+        { name: "Tailwind CSS", level: "Advanced", icon: "🌊" },
+        { name: "TypeScript", level: "Intermediate", icon: "🟦" },
       ],
     },
     {
-      category: 'Backend',
+      category: "Backend",
       skills: [
-        { name: 'Node.js', level: 'Advanced', icon: '🟢' },
-        { name: 'PostgreSQL', level: 'Intermediate', icon: '🐘' },
-        { name: 'MongoDB', level: 'Intermediate', icon: '🍃' },
-        { name: 'Express', level: 'Advanced', icon: '🚂' },
+        { name: "Node.js", level: "Advanced", icon: "🟢" },
+        { name: "PostgreSQL", level: "Intermediate", icon: "🐘" },
+        { name: "MongoDB", level: "Intermediate", icon: "🍃" },
+        { name: "Express", level: "Advanced", icon: "🚂" },
       ],
     },
     {
-      category: 'Tools & Others',
+      category: "Tools & Others",
       skills: [
-        { name: 'Git', level: 'Advanced', icon: '🐙' },
-        { name: 'Docker', level: 'Beginner', icon: '🐋' },
-        { name: 'Figma', level: 'Intermediate', icon: '🎨' },
-        { name: 'Firebase', level: 'Intermediate', icon: '🔥' },
+        { name: "Git", level: "Advanced", icon: "🐙" },
+        { name: "Docker", level: "Beginner", icon: "🐋" },
+        { name: "Figma", level: "Intermediate", icon: "🎨" },
+        { name: "Firebase", level: "Intermediate", icon: "🔥" },
       ],
     },
   ];
@@ -55,9 +55,8 @@ const TechSection = () => {
   return (
     <section className="w-full py-24 bg-[#0a0a0a] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        
         {/* Section Heading */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -75,7 +74,7 @@ const TechSection = () => {
         {/* Tech Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {technologies.map((group, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               variants={containerVariants}
               initial="hidden"
@@ -108,7 +107,7 @@ const TechSection = () => {
                           <h4 className="font-semibold group-hover:text-[#4584f7] transition-colors">
                             {tech.name}
                           </h4>
-                          <span className="text-[10px] text-gray-500 uppercase tracking-widest">
+                          <span className="text-[10px] text-gray-300 uppercase tracking-widest">
                             {tech.level}
                           </span>
                         </div>
@@ -118,10 +117,19 @@ const TechSection = () => {
                       <div className="h-1.5 w-16 bg-white/10 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
-                          whileInView={{ 
-                            width: tech.level === 'Advanced' ? '100%' : tech.level === 'Intermediate' ? '65%' : '35%' 
+                          whileInView={{
+                            width:
+                              tech.level === "Advanced"
+                                ? "100%"
+                                : tech.level === "Intermediate"
+                                  ? "65%"
+                                  : "35%",
                           }}
-                          transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+                          transition={{
+                            duration: 1.5,
+                            ease: "easeOut",
+                            delay: 0.5,
+                          }}
                           viewport={{ once: true }}
                           className="h-full bg-[#4584f7] rounded-full"
                         />

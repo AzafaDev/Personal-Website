@@ -39,13 +39,13 @@ const Navbar = () => {
           <div className="relative">
             <div className="absolute -inset-1 bg-[#4584f7] rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
             <div className="relative p-2 bg-black rounded-lg border border-white/10 group-hover:border-[#4584f7]/50 transition-colors">
-              <a href="/">
+              <a href="/" aria-label='home-link'>
                 <Terminal className="text-[#4584f7] size-6" />
               </a>
             </div>
           </div>
           <div className="flex flex-col">
-            <a className="text-xl font-bold tracking-tight leading-none" href="/">
+            <a className="text-xl font-bold tracking-tight leading-none" href="/" aria-label='home-link'>
               Azafa
             </a>
             <span className="text-[10px] text-[#4584f7] font-mono tracking-[0.2em] uppercase">

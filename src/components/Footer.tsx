@@ -38,6 +38,7 @@ const Footer = () => {
                   <a
                     href={`#${item.toLowerCase()}`}
                     className="text-gray-400 hover:text-white transition-colors flex items-center group"
+                    aria-label="navigation-link"
                   >
                     <span className="h-px w-0 bg-[#4584f7] mr-0 group-hover:w-4 group-hover:mr-2 transition-all" />
                     {item}
@@ -62,7 +63,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-gray-500 text-sm flex items-center gap-1">
+          <p className="text-gray-300 text-sm flex items-center gap-1">
             © {currentYear} Azafa. Made with{" "}
             <Heart size={14} className="text-red-500 fill-red-500" /> in
             Indonesia

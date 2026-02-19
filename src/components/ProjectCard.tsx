@@ -71,14 +71,14 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
               className="p-1 hover:text-[#4584f7] transition-colors"
               aria-label="project-button-by-github"
             >
-              <Github className="size-5 text-gray-500 hover:text-white" />
+              <Github className="size-5 text-gray-300 hover:text-white" />
             </button>
             <button
               onClick={(e) => handleProjectClick(e, "demo", project.title)}
               className="p-1 hover:text-[#4584f7] transition-colors"
               aria-label="project-button-by-demo"
             >
-              <ExternalLink className="size-5 text-gray-500 hover:text-white" />
+              <ExternalLink className="size-5 text-gray-300 hover:text-white" />
             </button>
           </div>
         </div>
