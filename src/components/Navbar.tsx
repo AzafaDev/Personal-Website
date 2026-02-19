@@ -84,7 +84,7 @@ const Navbar = () => {
             target="_blank"
             rel="noreferrer"
             aria-label="Contact me on WhatsApp"
-            className="group relative inline-flex items-center justify-center px-6 py-2.5 font-bold text-white bg-[#204688] rounded-xl shadow-lg transition-all"
+            className="group relative inline-flex items-center justify-center px-6 py-2.5 font-bold text-white bg-[#084ecf] rounded-xl shadow-lg transition-all"
           >
             <span className="relative z-10 flex items-center text-white font-bold">
               Contact Me
