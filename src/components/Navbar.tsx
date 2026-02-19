@@ -121,7 +121,7 @@ const Navbar = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1 }}
                   href={item.link}
-                  onClick={(e) => {
+                  onClick={() => {
                     navigate(item.link);
                     setTimeout(() => {
                       setIsOpen(false);
