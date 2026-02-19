@@ -76,7 +76,7 @@ const Navbar = () => {
           </div>
 
           <motion.a
-            initial={{ opacity: 1, scale: 0.9 }} 
+            initial={{ opacity: 1, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -86,9 +86,9 @@ const Navbar = () => {
             aria-label="Contact me on WhatsApp"
             className="group relative inline-flex items-center justify-center px-6 py-2.5 font-bold text-white bg-[#204688] rounded-xl shadow-lg transition-all"
           >
-            <span className="relative z-10 flex items-center">
+            <span className="relative z-10 flex items-center text-white font-bold">
               Contact Me
-              <PhoneCall className="ml-2 size-4 group-hover:rotate-12 transition-transform" />
+              <PhoneCall className="ml-2 size-4" />
             </span>
           </motion.a>
         </div>
