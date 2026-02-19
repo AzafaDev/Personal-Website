@@ -52,13 +52,13 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-4">
-            <h2 className="text-[#4584f7] font-mono text-lg tracking-widest uppercase">
+            <h1 className="text-[#4584f7] font-mono text-lg tracking-widest uppercase">
               Full-Stack Web Developer
-            </h2>
-            <h1 className="text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter">
+            </h1>
+            <h2 className="text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter">
               I'm <span className="text-white">Akmal Dzakwan Faiz</span>
               <span className="text-[#4584f7]">.</span>
-            </h1>
+            </h2>
           </motion.div>
 
           <motion.p

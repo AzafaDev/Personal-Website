@@ -62,9 +62,9 @@ const TechSection = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
             Tech <span className="text-[#4584f7]">Stack</span>
-          </h2>
+          </h3>
           <p className="text-gray-400 max-w-2xl">
             Kumpulan teknologi yang sering saya gunakan untuk mengubah ide
             menjadi produk digital yang fungsional dan terukur.

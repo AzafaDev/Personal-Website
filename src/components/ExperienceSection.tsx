@@ -50,9 +50,9 @@ const ExperienceSection = () => {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="text-4xl font-black tracking-tighter mb-4">
+              <h4 className="text-4xl font-black tracking-tighter mb-4">
                 Work <span className="text-[#4584f7]">History</span>
-              </h2>
+              </h4>
               <p className="text-gray-400">
                 Perjalanan profesional saya dalam membangun produk digital.
               </p>
@@ -82,9 +82,9 @@ const ExperienceSection = () => {
 
                   <div className="bg-white/2 border border-white/5 p-6 rounded-2xl hover:border-[#4584f7]/30 transition-all duration-500">
                     <div className="flex flex-wrap justify-between items-center gap-2 mb-4">
-                      <h3 className="text-xl font-bold text-white">
+                      <h4 className="text-xl font-bold text-white">
                         {exp.title}
-                      </h3>
+                      </h4>
                       <div className="flex items-center gap-2 text-xs font-mono text-gray-300 bg-white/5 px-3 py-1 rounded-full">
                         <Calendar className="size-3" />
                         {exp.period}
@@ -120,11 +120,11 @@ const ExperienceSection = () => {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="text-4xl font-black tracking-tighter mb-4">
+              <h4 className="text-4xl font-black tracking-tighter mb-4">
                 What They <span className="text-gray-300">Say.</span>
-              </h2>
+              </h4>
               <p className="text-gray-400">
-                Feedback jujur dari kolaborator dan klien sebelumnya.
+                Fh4dback jujur dari kolaborator dan klien sebelumnya.
               </p>
             </motion.div>
 

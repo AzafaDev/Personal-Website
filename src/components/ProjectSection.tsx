@@ -37,10 +37,10 @@ const ProjectSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">
+            <h4 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">
               Featured{" "}
               <span className="text-gray-300 italic font-light">Work</span>
-            </h2>
+            </h4>
             <div className="h-1 w-20 bg-[#4584f7] rounded-full" />
           </motion.div>
         </div>

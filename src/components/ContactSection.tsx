@@ -64,9 +64,9 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="mb-16 text-center md:text-left"
         >
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">
+          <h4 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">
             Let's <span className="text-[#4584f7]">Connect.</span>
-          </h2>
+          </h4>
           <p className="text-gray-400 max-w-lg leading-relaxed">
             Punya ide proyek atau sekadar ingin menyapa? Silakan kirim pesan,
             saya akan membalasnya sesegera mungkin.
