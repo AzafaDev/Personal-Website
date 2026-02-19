@@ -53,7 +53,7 @@ const TechSection = () => {
   };
 
   return (
-    <section className="w-full py-24 bg-[#0a0a0a] text-white overflow-hidden">
+    <section className="w-full py-24 bg-[#0a0a0a] text-white overflow-hidden" id="skills">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Heading */}
         <motion.div
