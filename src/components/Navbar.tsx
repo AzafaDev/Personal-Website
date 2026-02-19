@@ -125,7 +125,7 @@ const Navbar = () => {
                     navigate(item.link);
                     setTimeout(() => {
                       setIsOpen(false);
-                    }, 300);
+                    }, 1000);
                   }}
                   className="text-lg font-medium text-gray-300 hover:text-[#4584f7] transition-colors flex justify-between items-center group py-2" // Tambah padding biar gampang diklik jari
                   aria-label={item.name}
