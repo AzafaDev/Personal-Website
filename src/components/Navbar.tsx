@@ -77,10 +77,11 @@ const Navbar = () => {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://wa.link/q3wda6"
-            target="blank"
-            aria-label='contact-link'
-            className="group relative inline-flex items-center justify-center px-6 py-2.5 font-semibold text-white bg-[#4584f7] rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(69,132,247,0.4)]"
+            href="https://wa.link/q3wda6" 
+  target="_blank" // Typo fix: harusnya _blank
+  rel="noreferrer"
+  aria-label="Contact me on WhatsApp" 
+  className="group relative inline-flex items-center justify-center px-6 py-2.5 font-semibold bg-[#4584f7] text-white rounded-xl shadow-lg hover:bg-[#3b72d1] transition-all"
           >
             <span className="relative z-10 flex items-center">
               Contact Me <PhoneCall className="ml-2 size-4 group-hover:rotate-12 transition-transform" />
