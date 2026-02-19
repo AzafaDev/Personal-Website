@@ -92,8 +92,8 @@ const AboutSection = () => {
                 className="rounded-xl grayscale hover:grayscale-0 transition duration-700 object-cover w-full h-112.5"
                 loading="eager"
                 fetchPriority="high"
-                width={'100%'}
-                height={'450px'}
+                width={"100%"}
+                height={"450px"}
               />
             </div>
 
@@ -137,7 +137,7 @@ const AboutSection = () => {
                 Sejak memulai perjalanan saya sebagai developer, saya fokus
                 membangun produk digital yang membantu bisnis berkembang.
                 Ketertarikan saya pada{" "}
-                <span className="text-blue-400">Web Development</span> bermula
+                <span className="text-blue-500">Web Development</span> bermula
                 dari rasa penasaran bagaimana logika bisa diubah menjadi
                 interaksi visual yang bermakna. Fokus utama saya adalah
                 skalabilitas dan pengalaman pengguna yang mulus.

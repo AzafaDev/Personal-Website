@@ -46,7 +46,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/3 backdrop-blur-md"
           >
             <Sparkles className="size-4 text-[#4584f7]" />
-            <span className="text-xs font-semibold text-blue-400 tracking-wider uppercase">
+            <span className="text-xs font-semibold text-blue-500 tracking-wider uppercase">
               Available for Work
             </span>
           </motion.div>
@@ -125,8 +125,8 @@ const HeroSection = () => {
                 className="w-full h-full object-cover grayscale hover:grayscale-0 opacity-80 group-hover:opacity-100 transition-all duration-700"
                 loading="eager"
                 fetchPriority="high"
-                width={'100%'}
-                height={'100%'}
+                width={"100%"}
+                height={"100%"}
               />
             </motion.div>
 
