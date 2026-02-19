@@ -90,7 +90,7 @@ const HeroSection = () => {
                 href="https://github.com/AzafaDev"
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-transform hover:scale-110"
-                aria-label="github-link"
+                aria-label="Github profile"
               >
                 <Github className="size-6" />
               </a>
@@ -98,7 +98,7 @@ const HeroSection = () => {
                 href="https://www.linkedin.com/in/akmal-dzakwan-faiz-0bb98839b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                 target="_blank"
                 className="text-gray-400 hover:text-white transition-transform hover:scale-110"
-                aria-label="linkedin-link"
+                aria-label="LinkedIn profile"
               >
                 <Linkedin className="size-6" />
               </a>
