@@ -1,6 +1,6 @@
-import { Terminal, Menu, X, ArrowRight, PhoneCall } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion'; 
+import { Terminal, Menu, X, ArrowRight, PhoneCall } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,30 +8,29 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const list = [
-    { name: 'Home', link: '/' },
-    { name: 'About', link: '/#about' },
-    { name: 'Portfolio', link: '/#portfolio' },
-    { name: 'Skills', link: '/#skills' },
-    {name: 'Experience', link: '/#experience'},
-    { name: 'Contact', link: '/#contact' },
+    { name: "Home", link: "/" },
+    { name: "About", link: "/#about" },
+    { name: "Portfolio", link: "/#portfolio" },
+    { name: "Skills", link: "/#skills" },
+    { name: "Experience", link: "/#experience" },
+    { name: "Contact", link: "/#contact" },
   ];
 
   return (
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-500 border-b ${
         scrolled
-          ? 'bg-black/60 backdrop-blur-xl border-white/10 py-3'
-          : 'bg-transparent border-transparent py-5'
+          ? "bg-black/60 backdrop-blur-xl border-white/10 py-3"
+          : "bg-transparent border-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-white">
-        
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-3 group cursor-pointer"
@@ -39,13 +38,17 @@ const Navbar = () => {
           <div className="relative">
             <div className="absolute -inset-1 bg-[#4584f7] rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
             <div className="relative p-2 bg-black rounded-lg border border-white/10 group-hover:border-[#4584f7]/50 transition-colors">
-              <a href="/" aria-label='home-link'>
+              <a href="/" aria-label="home-link">
                 <Terminal className="text-[#4584f7] size-6" />
               </a>
             </div>
           </div>
           <div className="flex flex-col">
-            <a className="text-xl font-bold tracking-tight leading-none" href="/" aria-label='home-link'>
+            <a
+              className="text-xl font-bold tracking-tight leading-none"
+              href="/"
+              aria-label="home-link"
+            >
               Azafa
             </a>
             <span className="text-[10px] text-[#4584f7] font-mono tracking-[0.2em] uppercase">
@@ -73,25 +76,26 @@ const Navbar = () => {
           </div>
 
           <motion.a
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 1, scale: 0.9 }} 
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://wa.link/q3wda6" 
-  target="_blank" // Typo fix: harusnya _blank
-  rel="noreferrer"
-  aria-label="Contact me on WhatsApp" 
-  className="group relative inline-flex items-center justify-center px-6 py-2.5 font-semibold bg-[#4584f7] text-white rounded-xl shadow-lg hover:bg-[#3b72d1] transition-all"
+            href="https://wa.link/q3wda6"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Contact me on WhatsApp"
+            className="group relative inline-flex items-center justify-center px-6 py-2.5 font-bold text-white bg-[#3b72d1] rounded-xl shadow-lg transition-all"
           >
             <span className="relative z-10 flex items-center">
-              Contact Me <PhoneCall className="ml-2 size-4 group-hover:rotate-12 transition-transform" />
+              Contact Me
+              <PhoneCall className="ml-2 size-4 group-hover:rotate-12 transition-transform" />
             </span>
           </motion.a>
         </div>
 
         <button
           className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
-          aria-label='hamburger-button'
+          aria-label="hamburger-button"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="size-7" /> : <Menu className="size-7" />}
@@ -102,7 +106,7 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl border-b border-white/10 overflow-hidden md:hidden"
