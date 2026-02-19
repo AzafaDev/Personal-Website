@@ -27,7 +27,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-sm font-mono uppercase tracking-[0.2em] text-[#4584f7] mb-6">
               Navigation
@@ -48,7 +47,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h4 className="text-sm font-mono uppercase tracking-[0.2em] text-[#4584f7] mb-6">
               Office
@@ -61,7 +59,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-300 text-sm flex items-center gap-1">
             © {currentYear} Azafa. Made with{" "}

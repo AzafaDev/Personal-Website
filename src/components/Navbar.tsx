@@ -64,6 +64,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className="text-sm font-medium text-gray-400 hover:text-white transition-colors relative group"
+                aria-label={item.name}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4584f7] transition-all duration-300 group-hover:w-full"></span>
@@ -78,6 +79,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             href="https://wa.link/q3wda6"
             target="blank"
+            aria-label='contact-link'
             className="group relative inline-flex items-center justify-center px-6 py-2.5 font-semibold text-white bg-[#4584f7] rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(69,132,247,0.4)]"
           >
             <span className="relative z-10 flex items-center">
@@ -114,6 +116,7 @@ const Navbar = () => {
                   href={item.link}
                   onClick={() => setIsOpen(false)}
                   className="text-lg font-medium text-gray-300 hover:text-[#4584f7] transition-colors flex justify-between items-center group"
+                  aria-label={item.name}
                 >
                   {item.name}
                   <ArrowRight className="size-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />

@@ -86,6 +86,7 @@ const ContactSection = () => {
                   transition={{ delay: idx * 0.1 }}
                   viewport={{ once: true }}
                   className="flex items-center gap-6 group cursor-pointer"
+                  aria-label={`${info.label} ${info.value}`}
                 >
                   <div className="p-4 bg-white/5 rounded-2xl border border-white/10 text-[#4584f7] group-hover:bg-[#4584f7] group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-lg shadow-blue-500/0 group-hover:shadow-blue-500/20">
                     {React.cloneElement(info.icon, { className: "size-6" })}
@@ -115,6 +116,7 @@ const ContactSection = () => {
                     whileHover={{ y: -5 }}
                     whileTap={{ scale: 0.9 }}
                     className="p-4 bg-white/5 rounded-full border border-white/10 text-gray-400 hover:text-white hover:border-[#4584f7]/50 transition-all"
+                    aria-label={`${social.name} Link`}
                   >
                     {social.icon}
                   </motion.a>
