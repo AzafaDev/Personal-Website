@@ -88,6 +88,7 @@ const Navbar = () => {
 
         <button
           className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
+          aria-label='hamburger-button'
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="size-7" /> : <Menu className="size-7" />}

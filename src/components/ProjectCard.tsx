@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink, Folder, Github } from "lucide-react";
 import toast from "react-hot-toast";
 
-const ProjectCard = ({ project , index  } : { project: any, index: number}) => {
+const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   const handleProjectClick = (
     e: React.MouseEvent,
     title: string,
@@ -51,6 +51,8 @@ const ProjectCard = ({ project , index  } : { project: any, index: number}) => {
           whileHover={{ scale: 1.08 }}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
 
         <div className="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-500">
@@ -67,12 +69,14 @@ const ProjectCard = ({ project , index  } : { project: any, index: number}) => {
             <button
               onClick={(e) => handleProjectClick(e, "github", project.title)}
               className="p-1 hover:text-[#4584f7] transition-colors"
+              aria-label="project-button-by-github"
             >
               <Github className="size-5 text-gray-500 hover:text-white" />
             </button>
             <button
               onClick={(e) => handleProjectClick(e, "demo", project.title)}
               className="p-1 hover:text-[#4584f7] transition-colors"
+              aria-label="project-button-by-demo"
             >
               <ExternalLink className="size-5 text-gray-500 hover:text-white" />
             </button>

@@ -126,6 +126,7 @@ const ContactSection = () => {
                 whileTap={{ scale: 0.98 }}
                 onClick={() => toast.error("Mail server coming soon! 🚀")}
                 className="w-full flex items-center justify-center gap-3 bg-[#4584f7] hover:bg-[#3b72d1] text-white font-bold py-5 rounded-2xl transition-all shadow-xl shadow-blue-500/20 group overflow-hidden relative"
+                aria-label="mail-button"
               >
                 <span className="relative z-10">Send Message</span>
                 <Send className="size-5 relative z-10 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-300" />

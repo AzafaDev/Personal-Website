@@ -68,6 +68,8 @@ const AboutSection = () => {
                 src="/workspace.webp"
                 alt="Akmal Dzakwan Faiz Workspace"
                 className="rounded-xl grayscale hover:grayscale-0 transition duration-700 object-cover w-full h-112.5"
+                loading="eager"
+                fetchPriority='high'
               />
             </div>
 
@@ -140,6 +142,7 @@ const AboutSection = () => {
               <button 
                 className="flex items-center gap-2 text-[#4584f7] font-semibold hover:gap-4 transition-all group"
                 onClick={() => toast.success('Coming soon! 😁')}
+                aria-label='download-button'
               >
                 Download Resume
                 <span className="h-0.5 w-6 bg-[#4584f7] group-hover:w-10 transition-all"></span>

@@ -73,6 +73,7 @@ const Footer = () => {
             whileTap={{ scale: 0.9 }}
             onClick={scrollToTop}
             className="group flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-white transition-colors"
+            aria-label="back-to-top-button"
           >
             BACK TO TOP
             <div className="p-2 bg-white/5 rounded-full group-hover:bg-[#4584f7] transition-colors">
