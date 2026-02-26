@@ -1,5 +1,4 @@
 import { Analytics } from "@vercel/analytics/react";
-import { lazy, Suspense } from "react";
 
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
@@ -8,8 +7,7 @@ import TechSection from "./components/TechSection";
 import ProjectSection from "./components/ProjectSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-
-const ExperienceSection = lazy(() => import("./components/ExperienceSection"));
+import ExperienceSection from "./components/ExperienceSection";
 
 const App = () => {
   return (
@@ -20,10 +18,7 @@ const App = () => {
         <AboutSection />
         <TechSection />
         <ProjectSection />
-
-        <Suspense fallback={<div className="h-[50vh] bg-black" />}>
-          <ExperienceSection />
-        </Suspense>
+        <ExperienceSection />
         <ContactSection />
       </main>
       <Footer />
