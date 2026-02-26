@@ -15,6 +15,8 @@ export const AboutVisual = () => (
         fetchPriority="high"
         width={320}
         height={320}
+        loading="eager"
+        decoding="sync"
       />
     </div>
 
