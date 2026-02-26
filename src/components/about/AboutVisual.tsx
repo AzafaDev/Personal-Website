@@ -13,8 +13,8 @@ export const AboutVisual = () => (
         alt="Azafa Workspace"
         className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 transition-all duration-700"
         fetchPriority="high"
-        width={400}
-        height={400}
+        width={320}
+        height={320}
       />
     </div>
 
