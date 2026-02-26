@@ -53,7 +53,7 @@ export const TechRow = ({ group }: { group: TechGroup }) => (
                   {IconSVG || <span className="text-[8px] italic">?</span>}
                 </div>
 
-                <span className="text-[9px] md:text-[10px] font-mono text-zinc-500 md:text-zinc-800 md:group-hover:text-zinc-400 transition-colors uppercase tracking-widest">
+                <span className="text-[9px] md:text-[10px] font-mono text-zinc-500 md:text-zinc-400 md:group-hover:text-zinc-400 transition-colors uppercase tracking-widest">
                   {skill.name}
                 </span>
               </div>
@@ -65,7 +65,7 @@ export const TechRow = ({ group }: { group: TechGroup }) => (
       {/* DEKORASI PANAH */}
       <div className="hidden lg:col-span-1 lg:flex justify-end pr-4">
         <ArrowRight
-          className="text-zinc-600 md:text-zinc-800 group-hover:text-blue-400 group-hover:translate-x-2 transition-all duration-500"
+          className="text-zinc-400 md:text-zinc-400 group-hover:text-blue-400 group-hover:translate-x-2 transition-all duration-500"
           size={24}
         />
       </div>

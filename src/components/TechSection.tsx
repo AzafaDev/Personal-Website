@@ -18,7 +18,7 @@ const TechSection = () => {
             Tech{" "}
             <span
               className="text-zinc-900"
-              style={{ WebkitTextStroke: "1px #3f3f46" }}
+              style={{ WebkitTextStroke: "1px rgb(113, 113, 122)" }}
             >
               Stack.
             </span>
