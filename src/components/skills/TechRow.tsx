@@ -17,7 +17,7 @@ export const TechRow = ({ group }: { group: TechGroup }) => (
     <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0">
       {/* INDEX NUMBER */}
       <div className="lg:col-span-1 hidden lg:flex items-center">
-        <span className="font-mono text-zinc-700 text-lg group-hover:text-blue-600 transition-colors">
+        <span className="font-mono text-zinc-500 text-lg group-hover:text-blue-400 transition-colors">
           {group.id}
         </span>
       </div>
@@ -27,7 +27,7 @@ export const TechRow = ({ group }: { group: TechGroup }) => (
         <h3 className="text-2xl md:text-4xl font-bold tracking-tight mb-2 md:group-hover:translate-x-2 transition-transform duration-500 uppercase">
           {group.category}
         </h3>
-        <p className="text-zinc-500 text-xs md:text-sm max-w-sm">
+        <p className="text-zinc-400 text-xs md:text-sm max-w-sm">
           {group.description}
         </p>
       </div>
@@ -53,7 +53,7 @@ export const TechRow = ({ group }: { group: TechGroup }) => (
                   {IconSVG || <span className="text-[8px] italic">?</span>}
                 </div>
 
-                <span className="text-[9px] md:text-[10px] font-mono text-zinc-600 md:text-zinc-800 md:group-hover:text-zinc-500 transition-colors uppercase tracking-widest">
+                <span className="text-[9px] md:text-[10px] font-mono text-zinc-500 md:text-zinc-800 md:group-hover:text-zinc-400 transition-colors uppercase tracking-widest">
                   {skill.name}
                 </span>
               </div>
@@ -65,7 +65,7 @@ export const TechRow = ({ group }: { group: TechGroup }) => (
       {/* DEKORASI PANAH */}
       <div className="hidden lg:col-span-1 lg:flex justify-end pr-4">
         <ArrowRight
-          className="text-zinc-800 group-hover:text-blue-600 group-hover:translate-x-2 transition-all duration-500"
+          className="text-zinc-600 md:text-zinc-800 group-hover:text-blue-400 group-hover:translate-x-2 transition-all duration-500"
           size={24}
         />
       </div>

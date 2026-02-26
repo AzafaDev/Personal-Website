@@ -17,7 +17,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center bg-black overflow-hidden text-white px-4 md:px-6 py-12 md:py-20">
-      
       {/* --- DEKORASI LATAR (Glow & Grid) --- */}
       <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-600/5 blur-[80px] md:blur-[120px] pointer-events-none" />
       <div
@@ -29,7 +28,6 @@ const HeroSection = () => {
       />
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center z-10">
-        
         {/* --- KONTEN TEKS (Kiri) --- */}
         <motion.div
           initial="hidden"
@@ -47,7 +45,7 @@ const HeroSection = () => {
 
           {/* Judul Utama & Nama (Responsive Text) */}
           <motion.div variants={fadeIn} className="space-y-2 md:space-y-4">
-            <h1 className="text-blue-600 font-mono text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">
+            <h1 className="text-blue-400 font-mono text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">
               // Full-Stack Developer
             </h1>
             <h2 className="text-5xl sm:text-6xl md:text-8xl lg:text-[100px] font-black tracking-tighter leading-[0.9] md:leading-[0.85] uppercase italic">
@@ -64,9 +62,11 @@ const HeroSection = () => {
           {/* Deskripsi Singkat */}
           <motion.p
             variants={fadeIn}
-            className="text-zinc-500 text-base md:text-xl max-w-lg leading-tight uppercase font-medium tracking-tighter"
+            className="text-zinc-400 text-base md:text-xl max-w-lg leading-tight uppercase font-medium tracking-tighter"
           >
-            Crafting <span className="text-white">high-end digital solutions</span> where speed meets brutalist design aesthetics.
+            Crafting{" "}
+            <span className="text-white">high-end digital solutions</span> where
+            speed meets brutalist design aesthetics.
           </motion.p>
 
           {/* Tombol Aksi & Sosmed */}
@@ -83,7 +83,10 @@ const HeroSection = () => {
                 View Portfolio
               </span>
               <div className="size-10 md:size-12 rounded-full border border-zinc-800 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-all shrink-0">
-                <ArrowRight size={18} className="group-hover:rotate-[-45deg] transition-transform" />
+                <ArrowRight
+                  size={18}
+                  className="group-hover:rotate-[-45deg] transition-transform"
+                />
               </div>
             </a>
 
@@ -96,7 +99,6 @@ const HeroSection = () => {
         <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end">
           <ProfileFrame />
         </div>
-
       </div>
     </section>
   );

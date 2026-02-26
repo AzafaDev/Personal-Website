@@ -23,9 +23,9 @@ export const AboutVisual = () => (
     {/* Floating Badge (Status Alumni) */}
     <div className="absolute -bottom-6 -right-6 bg-zinc-900 border border-white/10 p-4 shadow-2xl">
       <div className="flex items-center gap-3">
-        <GraduationCap className="text-blue-600" size={24} />
+        <GraduationCap className="text-blue-400" size={24} />
         <div className="flex flex-col">
-          <span className="text-[10px] font-black uppercase text-zinc-500">
+          <span className="text-[10px] font-black uppercase text-zinc-400">
             Purwadhika
           </span>
           <span className="text-[10px] font-black uppercase text-white tracking-widest leading-none mt-1">

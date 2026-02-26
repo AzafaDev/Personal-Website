@@ -13,7 +13,7 @@ const ExperienceSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* --- SECTION HEADER --- */}
         <div className="flex items-center gap-4 mb-20">
-          <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">
+          <span className="text-blue-400 font-black text-xs uppercase tracking-[0.3em]">
             02 // Experience & Praise
           </span>
           <div className="h-[1px] flex-1 bg-zinc-800" />
@@ -43,7 +43,7 @@ const ExperienceSection = () => {
           {/* --- RIGHT COLUMN: SOCIAL PROOF --- */}
           <div className="lg:col-span-5 space-y-12">
             <h3 className="text-4xl font-bold tracking-tighter uppercase mb-16 text-right lg:text-left">
-              Social <span className="text-zinc-500">Proof.</span>
+              Social <span className="text-zinc-400">Proof.</span>
             </h3>
 
             <div className="space-y-8">
@@ -56,7 +56,7 @@ const ExperienceSection = () => {
             <div className="pt-8 flex justify-end lg:justify-start">
               <a
                 href="#"
-                className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-white transition-colors group"
+                className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-white transition-colors group"
               >
                 View LinkedIn Recommendations
                 <ArrowUpRight

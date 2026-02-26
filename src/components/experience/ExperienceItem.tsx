@@ -16,15 +16,15 @@ export const ExperienceItem = ({ exp }: ExperienceProps) => (
 
     <div className="space-y-4">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-        <h4 className="text-2xl font-bold uppercase tracking-tight group-hover:text-blue-600 transition-colors italic">
+        <h4 className="text-2xl font-bold uppercase tracking-tight group-hover:text-blue-400 transition-colors italic">
           {exp.title}
         </h4>
-        <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest bg-zinc-950 px-2 py-1 border border-zinc-900">
+        <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest bg-zinc-950 px-2 py-1 border border-zinc-900">
           {exp.period}
         </span>
       </div>
 
-      <p className="text-blue-600 text-xs font-black uppercase tracking-widest">
+      <p className="text-blue-400 text-xs font-black uppercase tracking-widest">
         // {exp.company}
       </p>
 
@@ -35,7 +35,10 @@ export const ExperienceItem = ({ exp }: ExperienceProps) => (
       {/* Task List / Tags */}
       <div className="flex flex-wrap gap-3 pt-2">
         {exp.tasks.map((task, tIdx) => (
-          <span key={tIdx} className="text-[9px] font-mono text-zinc-600 uppercase">
+          <span
+            key={tIdx}
+            className="text-[9px] font-mono text-zinc-500 uppercase"
+          >
             [{task}]
           </span>
         ))}

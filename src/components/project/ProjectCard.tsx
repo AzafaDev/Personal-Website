@@ -45,19 +45,19 @@ export const ProjectCard = ({ project }: { project: Project }) => {
       <div className="flex flex-col gap-3">
         {/* Category Tag & Line Decor */}
         <div className="flex items-center gap-3">
-          <span className="text-[10px] font-black tracking-[0.3em] uppercase text-blue-600">
+          <span className="text-[10px] font-black tracking-[0.3em] uppercase text-blue-400">
             {project.category}
           </span>
           <div className="h-px flex-1 bg-zinc-900"></div>
         </div>
 
         {/* Title */}
-        <h3 className="text-2xl font-bold tracking-tighter uppercase group-hover:text-blue-600 transition-colors text-white">
+        <h3 className="text-2xl font-bold tracking-tighter uppercase group-hover:text-blue-400 transition-colors text-white">
           {project.title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-zinc-500 leading-relaxed max-w-[90%]">
+        <p className="text-sm text-zinc-400 leading-relaxed max-w-[90%]">
           {project.description}
         </p>
 

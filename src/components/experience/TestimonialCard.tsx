@@ -30,13 +30,13 @@ export const TestimonialCard = ({ testi }: TestimonialProps) => (
         <h5 className="text-sm font-bold uppercase tracking-tight text-white">
           {testi.name}
         </h5>
-        <p className="text-[10px] font-mono text-blue-600 uppercase tracking-widest">
+        <p className="text-[10px] font-mono text-blue-400 uppercase tracking-widest">
           {testi.role}
         </p>
       </div>
       <div className="ml-auto flex gap-0.5">
         {[...Array(5)].map((_, i) => (
-          <Star key={i} className="size-2 fill-blue-600 text-blue-600" />
+          <Star key={i} className="size-2 fill-blue-600 text-blue-400" />
         ))}
       </div>
     </div>

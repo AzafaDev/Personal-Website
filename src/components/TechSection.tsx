@@ -6,12 +6,11 @@ const TechSection = () => {
   return (
     <section className="w-full py-16 md:py-32 bg-black text-white" id="skills">
       <div className="max-w-7xl mx-auto px-6">
-        
         {/* --- [HEADER SECTION] --- */}
         <div className="mb-16 md:mb-24">
           <div className="flex items-center gap-4 mb-6">
             <div className="h-px w-12 bg-blue-600" />
-            <span className="text-blue-600 font-mono text-xs tracking-[0.5em] uppercase">
+            <span className="text-blue-400 font-mono text-xs tracking-[0.5em] uppercase">
               My Arsenal
             </span>
           </div>
@@ -32,7 +31,6 @@ const TechSection = () => {
             <TechRow key={group.id} group={group} />
           ))}
         </div>
-
       </div>
     </section>
   );
