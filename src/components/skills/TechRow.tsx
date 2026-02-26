@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react";
+import { techIcons } from "../../data/portoflio";
 
 interface Skill {
   name: string;
-  img: string;
 }
 
 interface TechGroup {
@@ -15,8 +15,7 @@ interface TechGroup {
 export const TechRow = ({ group }: { group: TechGroup }) => (
   <div className="group relative border-b border-zinc-900 py-10 md:py-12 transition-all duration-500 hover:bg-zinc-950/50 active:bg-zinc-900 md:active:bg-transparent">
     <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0">
-      
-      {/* INDEX NUMBER (DESKTOP ONLY) */}
+      {/* INDEX NUMBER */}
       <div className="lg:col-span-1 hidden lg:flex items-center">
         <span className="font-mono text-zinc-700 text-lg group-hover:text-blue-600 transition-colors">
           {group.id}
@@ -36,24 +35,34 @@ export const TechRow = ({ group }: { group: TechGroup }) => (
       {/* GRID ICON TEKNOLOGI */}
       <div className="lg:col-span-5">
         <div className="flex flex-wrap gap-5 md:gap-8 lg:justify-end">
-          {group.skills.map((skill, idx) => (
-            <div key={idx} className="flex flex-col items-center gap-2">
-              <img
-                src={skill.img}
-                alt={skill.name}
-                className="size-7 md:size-8 object-contain transition-all duration-500 
-                           opacity-80 grayscale-0 
-                           md:opacity-30 md:grayscale md:group-hover:opacity-100 md:group-hover:grayscale-0"
-              />
-              <span className="text-[9px] md:text-[10px] font-mono text-zinc-600 md:text-zinc-800 md:group-hover:text-zinc-500 transition-colors uppercase tracking-widest">
-                {skill.name}
-              </span>
-            </div>
-          ))}
+          {group.skills.map((skill, idx) => {
+            const iconKey = skill.name
+              .toLowerCase()
+              .replace(/[.\s-]/g, "") as keyof typeof techIcons;
+            const IconSVG = techIcons[iconKey];
+
+            return (
+              <div key={idx} className="flex flex-col items-center gap-2">
+                {/* CONTAINER SVG */}
+                <div
+                  className="size-7 md:size-8 transition-all duration-500 
+                               fill-zinc-400 opacity-80 
+                               md:opacity-30 md:grayscale md:group-hover:opacity-100 md:group-hover:grayscale-0 
+                               [&>svg]:w-full [&>svg]:h-full"
+                >
+                  {IconSVG || <span className="text-[8px] italic">?</span>}
+                </div>
+
+                <span className="text-[9px] md:text-[10px] font-mono text-zinc-600 md:text-zinc-800 md:group-hover:text-zinc-500 transition-colors uppercase tracking-widest">
+                  {skill.name}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* DEKORASI PANAH (DESKTOP ONLY) */}
+      {/* DEKORASI PANAH */}
       <div className="hidden lg:col-span-1 lg:flex justify-end pr-4">
         <ArrowRight
           className="text-zinc-800 group-hover:text-blue-600 group-hover:translate-x-2 transition-all duration-500"
@@ -62,7 +71,7 @@ export const TechRow = ({ group }: { group: TechGroup }) => (
       </div>
     </div>
 
-    {/* ANIMASI GARIS BAWAH (HOVER EFFECT) */}
+    {/* ANIMASI GARIS BAWAH */}
     <div className="hidden md:block absolute bottom-0 left-0 h-0.5 w-0 bg-blue-600 transition-all duration-700 group-hover:w-full" />
   </div>
 );
