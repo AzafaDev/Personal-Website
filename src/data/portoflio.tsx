@@ -89,7 +89,7 @@ export const projects = [
     description:
       "Transformasi digital profil perusahaan dengan integrasi Payload CMS untuk manajemen konten yang dinamis dan performa Next.js yang optimal.",
     tech: ["Next.js", "PostgreSQL", "Payload CMS", "Tailwind"],
-    image: "/company-profile.png",
+    image: "/company-profile.webp",
     link: "https://company-profile-challange.vercel.app/",
   },
   {

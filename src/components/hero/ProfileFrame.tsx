@@ -18,7 +18,7 @@ export const ProfileFrame = () => (
       {/* Wadah Gambar Profil */}
       <div className="absolute inset-0 bg-zinc-900 overflow-hidden border border-zinc-800 z-10">
         <img
-          src="/profile.jpg"
+          src="/profile.webp"
           alt="Akmal Dzakwan"
           className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-80 hover:opacity-100"
           onError={(e) => {

@@ -27,6 +27,10 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           className="h-full w-full object-cover transition-all duration-700 
                      grayscale-0 opacity-100
                      md:grayscale md:opacity-50 md:group-hover:grayscale-0 md:group-hover:opacity-100 md:group-hover:scale-105"
+          loading="lazy"
+          decoding="async"
+          width={600}
+          height={375}
         />
 
         {/* Floating Arrow Badge (Desktop Only) */}
