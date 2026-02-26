@@ -6,10 +6,10 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import TechSection from "./components/TechSection";
 import ProjectSection from "./components/ProjectSection";
+import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 const ExperienceSection = lazy(() => import("./components/ExperienceSection"));
-const ContactSection = lazy(() => import("./components/ContactSection"));
-const Footer = lazy(() => import("./components/Footer"));
 
 const App = () => {
   return (
@@ -23,10 +23,10 @@ const App = () => {
 
         <Suspense fallback={<div className="h-[50vh] bg-black" />}>
           <ExperienceSection />
-          <ContactSection />
-          <Footer />
         </Suspense>
+        <ContactSection />
       </main>
+      <Footer />
       <Analytics />
     </div>
   );
