@@ -25,7 +25,7 @@ const ExperienceSection = () => {
             <h3 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] mb-16">
               Work <br />{" "}
               <span
-                className="text-zinc-900"
+                className="text-[#95959D]"
                 style={{ WebkitTextStroke: "1px rgb(113, 113, 122)" }}
               >
                 History.
@@ -43,7 +43,7 @@ const ExperienceSection = () => {
           {/* --- RIGHT COLUMN: SOCIAL PROOF --- */}
           <div className="lg:col-span-5 space-y-12">
             <h3 className="text-4xl font-bold tracking-tighter uppercase mb-16 text-right lg:text-left">
-              Social <span className="text-zinc-400">Proof.</span>
+              Social <span className="text-white">Proof.</span>
             </h3>
 
             <div className="space-y-8">
@@ -56,7 +56,7 @@ const ExperienceSection = () => {
             <div className="pt-8 flex justify-end lg:justify-start">
               <a
                 href="#"
-                className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 hover:text-white transition-colors group"
+                className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white hover:text-white transition-colors group"
               >
                 View LinkedIn Recommendations
                 <ArrowUpRight

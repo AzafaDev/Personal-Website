@@ -15,14 +15,14 @@ const ProjectSection = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="size-2 bg-blue-600 rounded-full animate-pulse"></div>
-              <span className="text-xs font-black tracking-[0.5em] uppercase text-zinc-400">
+              <span className="text-xs font-black tracking-[0.5em] uppercase text-white">
                 Selected Works
               </span>
             </div>
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-none uppercase">
               Proven <br />{" "}
               <span
-                className="text-zinc-900"
+                className="text-[#95959D]"
                 style={{ WebkitTextStroke: "1px rgb(113, 113, 122)" }}
               >
                 Solutions.
@@ -32,7 +32,7 @@ const ProjectSection = () => {
 
           {/* Sub-description (Hanya muncul di desktop) */}
           <div className="max-w-xs border-l border-zinc-800 pl-6 hidden md:block">
-            <p className="text-xs text-zinc-400 leading-relaxed uppercase tracking-wider">
+            <p className="text-xs text-white leading-relaxed uppercase tracking-wider">
               Membangun aplikasi yang tidak hanya indah secara visual, tapi juga
               memiliki performa yang kencang.
             </p>

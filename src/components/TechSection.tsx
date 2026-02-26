@@ -17,7 +17,7 @@ const TechSection = () => {
           <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-none italic uppercase">
             Tech{" "}
             <span
-              className="text-zinc-900"
+              className="text-[#95959D]"
               style={{ WebkitTextStroke: "1px rgb(113, 113, 122)" }}
             >
               Stack.

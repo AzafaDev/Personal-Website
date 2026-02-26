@@ -23,7 +23,7 @@ const ContactSection = () => {
             <h2 className="text-6xl md:text-[120px] font-black leading-[0.8] tracking-tighter uppercase italic">
               Ready to <br />
               <span
-                className="text-zinc-900"
+                className="text-[#95959D]"
                 style={{ WebkitTextStroke: "1px rgb(113, 113, 122)" }}
               >
                 Collaborate?
@@ -44,7 +44,7 @@ const ContactSection = () => {
             <div className="space-y-12 text-right lg:text-left">
               {contactInfo.map((info, idx) => (
                 <div key={idx} className="space-y-1">
-                  <p className="text-[10px] font-mono text-zinc-400 uppercase tracking-[0.3em] font-black">
+                  <p className="text-[10px] font-mono text-white uppercase tracking-[0.3em] font-black">
                     // {info.label}
                   </p>
                   <a
@@ -60,7 +60,7 @@ const ContactSection = () => {
             {/* Social Media & Footer Info */}
             <div className="space-y-10 text-right lg:text-left">
               <div className="flex flex-col gap-4">
-                <p className="text-[10px] font-mono text-zinc-400 uppercase tracking-[0.3em] font-black underline decoration-blue-600 underline-offset-8">
+                <p className="text-[10px] font-mono text-white uppercase tracking-[0.3em] font-black underline decoration-blue-600 underline-offset-8">
                   Follow the journey
                 </p>
                 <div className="flex justify-end lg:justify-start gap-6 pt-4">
@@ -77,7 +77,7 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <p className="text-[9px] font-mono text-zinc-500 uppercase tracking-[0.2em] leading-loose">
+              <p className="text-[9px] font-mono text-white uppercase tracking-[0.2em] leading-loose">
                 © 2026 Akmal Dzakwan. <br />
                 Built with React & Precision.
               </p>

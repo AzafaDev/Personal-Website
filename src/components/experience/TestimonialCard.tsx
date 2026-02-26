@@ -12,9 +12,9 @@ interface TestimonialProps {
 
 export const TestimonialCard = ({ testi }: TestimonialProps) => (
   <div className="relative p-8 bg-zinc-950 border border-zinc-900 group hover:border-blue-600/30 transition-all duration-500">
-    <Quote className="absolute top-4 right-4 size-8 text-zinc-900 group-hover:text-blue-900/30 transition-colors" />
+    <Quote className="absolute top-4 right-4 size-8 text-[#95959D] group-hover:text-blue-900/30 transition-colors" />
 
-    <p className="text-zinc-400 text-sm leading-relaxed mb-8 italic relative z-10">
+    <p className="text-white text-sm leading-relaxed mb-8 italic relative z-10">
       "{testi.text}"
     </p>
 

@@ -12,7 +12,7 @@ export const ContactInput = ({
   isTextArea?: boolean;
 }) => {
   const baseClass =
-    "w-full bg-transparent border-b-2 border-zinc-900 py-6 text-2xl md:text-4xl font-bold uppercase tracking-tighter outline-none focus:border-blue-600 transition-colors placeholder:text-zinc-400";
+    "w-full bg-transparent border-b-2 border-zinc-900 py-6 text-2xl md:text-4xl font-bold uppercase tracking-tighter outline-none focus:border-blue-600 transition-colors placeholder:text-white";
 
   return (
     <div className="group relative">

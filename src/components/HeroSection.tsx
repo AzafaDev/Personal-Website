@@ -51,7 +51,7 @@ const HeroSection = () => {
             <h2 className="text-5xl sm:text-6xl md:text-8xl lg:text-[100px] font-black tracking-tighter leading-[0.9] md:leading-[0.85] uppercase italic">
               AKMAL <br />
               <span
-                className="text-zinc-900"
+                className="text-[#95959D]"
                 style={{ WebkitTextStroke: "1px rgb(113, 113, 122)" }}
               >
                 DZAKWAN.
@@ -62,7 +62,7 @@ const HeroSection = () => {
           {/* Deskripsi Singkat */}
           <motion.p
             variants={fadeIn}
-            className="text-zinc-400 text-base md:text-xl max-w-lg leading-tight uppercase font-medium tracking-tighter"
+            className="text-white text-base md:text-xl max-w-lg leading-tight uppercase font-medium tracking-tighter"
           >
             Crafting{" "}
             <span className="text-white">high-end digital solutions</span> where

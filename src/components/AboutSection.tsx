@@ -39,7 +39,7 @@ const AboutSection = () => {
                 <span className="text-blue-400">professional expertise.</span>
               </h3>
 
-              <div className="space-y-4 text-zinc-400 leading-relaxed text-justify">
+              <div className="space-y-4 text-white leading-relaxed text-justify">
                 <p>
                   Perjalanan saya dimulai secara <strong>otodidak</strong>,
                   didorong oleh rasa penasaran bagaimana dunia digital bekerja.
@@ -63,7 +63,7 @@ const AboutSection = () => {
                   {/* Category Header */}
                   <div className="flex items-center gap-3">
                     {cat.icon}
-                    <span className="text-xs font-black tracking-[0.2em] uppercase text-zinc-400">
+                    <span className="text-xs font-black tracking-[0.2em] uppercase text-white">
                       {cat.title}
                     </span>
                     <div className="h-[1px] flex-1 bg-zinc-900" />

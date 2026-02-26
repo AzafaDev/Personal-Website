@@ -19,7 +19,7 @@ export const ExperienceItem = ({ exp }: ExperienceProps) => (
         <h4 className="text-2xl font-bold uppercase tracking-tight group-hover:text-blue-400 transition-colors italic">
           {exp.title}
         </h4>
-        <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest bg-zinc-950 px-2 py-1 border border-zinc-900">
+        <span className="text-[10px] font-mono text-white uppercase tracking-widest bg-zinc-950 px-2 py-1 border border-zinc-900">
           {exp.period}
         </span>
       </div>
@@ -28,7 +28,7 @@ export const ExperienceItem = ({ exp }: ExperienceProps) => (
         // {exp.company}
       </p>
 
-      <p className="text-zinc-400 text-sm leading-relaxed text-justify max-w-2xl">
+      <p className="text-white text-sm leading-relaxed text-justify max-w-2xl">
         {exp.desc}
       </p>
 
@@ -37,7 +37,7 @@ export const ExperienceItem = ({ exp }: ExperienceProps) => (
         {exp.tasks.map((task, tIdx) => (
           <span
             key={tIdx}
-            className="text-[9px] font-mono text-zinc-500 uppercase"
+            className="text-[9px] font-mono text-white uppercase"
           >
             [{task}]
           </span>

@@ -8,7 +8,7 @@ export const SocialLinks = ({ className = "" }: { className?: string }) => (
       href="https://github.com/AzafaDev"
       target="_blank"
       rel="noopener noreferrer"
-      className="text-zinc-500 hover:text-white transition-colors"
+      className="text-white hover:text-white transition-colors"
       aria-label="GitHub Profile"
     >
       <Github size={20} />
@@ -19,7 +19,7 @@ export const SocialLinks = ({ className = "" }: { className?: string }) => (
       href="https://linkedin.com/"
       target="_blank"
       rel="noopener noreferrer"
-      className="text-zinc-500 hover:text-white transition-colors"
+      className="text-white hover:text-white transition-colors"
       aria-label="LinkedIn Profile"
     >
       <Linkedin size={20} />

@@ -10,7 +10,7 @@ export const SkillCard = ({ icon, name }: SkillCardProps) => (
                   md:hover:border-blue-600/50"
   >
     <div
-      className="size-5 flex items-center justify-center text-zinc-400 transition-all
+      className="size-5 flex items-center justify-center text-white transition-all
                     /* Warna icon berubah hanya di desktop hover */
                     md:group-hover:text-white md:group-hover:grayscale-0 md:grayscale"
     >
@@ -20,7 +20,7 @@ export const SkillCard = ({ icon, name }: SkillCardProps) => (
     </div>
 
     <span
-      className="text-xs font-bold text-zinc-400 transition-colors
+      className="text-xs font-bold text-white transition-colors
                      /* Teks berubah putih hanya di desktop hover */
                      md:group-hover:text-white"
     >

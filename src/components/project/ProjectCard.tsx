@@ -57,7 +57,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-zinc-400 leading-relaxed max-w-[90%]">
+        <p className="text-sm text-white leading-relaxed max-w-[90%]">
           {project.description}
         </p>
 
@@ -66,7 +66,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
           {project.tech.map((t, i) => (
             <span
               key={i}
-              className="text-[9px] font-mono px-2 py-1 border border-zinc-800 text-zinc-400 uppercase tracking-widest"
+              className="text-[9px] font-mono px-2 py-1 border border-zinc-800 text-white uppercase tracking-widest"
             >
               {t}
             </span>

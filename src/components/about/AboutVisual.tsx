@@ -25,7 +25,7 @@ export const AboutVisual = () => (
       <div className="flex items-center gap-3">
         <GraduationCap className="text-blue-400" size={24} />
         <div className="flex flex-col">
-          <span className="text-[10px] font-black uppercase text-zinc-400">
+          <span className="text-[10px] font-black uppercase text-white">
             Purwadhika
           </span>
           <span className="text-[10px] font-black uppercase text-white tracking-widest leading-none mt-1">
