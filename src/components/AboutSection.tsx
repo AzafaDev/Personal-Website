@@ -9,32 +9,26 @@ const AboutSection = () => {
   return (
     <section id="about" className="relative w-full py-24 bg-black text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
-        {/* --- GRID UTAMA (Mobile: 1 kolom, Desktop: 12 kolom) --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
-          {/* SISI KIRI: Headline & Visual Branding */}
+          {/* --- KIRI: HEADLINE & VISUAL --- */}
           <div className="lg:col-span-5 space-y-8">
-            {/* Sub-header dengan aksen garis industrial */}
             <div className="flex items-center gap-4">
                <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">01 // Who is Azafa?</span>
                <div className="h-[1px] flex-1 bg-zinc-800" />
             </div>
             
-            {/* Headline Utama */}
             <h2 className="text-6xl md:text-8xl font-black leading-[0.85] tracking-tighter uppercase">
               Driven by <br />
               <span className="text-blue-600 italic">Curiosity.</span>
             </h2>
 
-            {/* Komponen Visual (Frame Foto & Badge Alumni) */}
             <AboutVisual />
           </div>
 
-          {/* SISI KANAN: Narrative Text & Skill Mapping */}
+          {/* --- KANAN: NARRATIVE & SKILLS --- */}
           <div className="lg:col-span-7 space-y-12">
-            
-            {/* Narasi Profile */}
+            {/* Teks Deskripsi */}
             <div className="space-y-6">
               <h3 className="text-2xl md:text-4xl font-bold leading-tight">
                 Self-taught passion meets <span className="text-blue-600">professional expertise.</span>
@@ -50,18 +44,18 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Tech Stack Categories (Mapping dari file data) */}
+            {/* Tech Stack Categories */}
             <div className="space-y-10">
               {categories.map((cat, idx) => (
                 <div key={idx} className="space-y-4">
-                  {/* Header Kategori (e.g., Frontend, Backend) */}
+                  {/* Category Header */}
                   <div className="flex items-center gap-3">
                     {cat.icon}
                     <span className="text-xs font-black tracking-[0.2em] uppercase text-zinc-400">{cat.title}</span>
                     <div className="h-[1px] flex-1 bg-zinc-900" />
                   </div>
 
-                  {/* Grid Skill Cards */}
+                  {/* Skills Grid */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {cat.skills.map((skill, sIdx) => (
                       <SkillCard key={sIdx} icon={skill.icon} name={skill.name} />
@@ -71,7 +65,7 @@ const AboutSection = () => {
               ))}
             </div>
 
-            {/* Call to Action: Download Resume */}
+            {/* Tombol Resume */}
             <div className="pt-4">
                <button 
                  onClick={() => toast.success("Resume coming soon!")}
