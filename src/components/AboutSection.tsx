@@ -86,6 +86,7 @@ const AboutSection = () => {
             {/* Tombol Resume */}
             <div className="pt-4">
               <button
+                aria-label="button"
                 onClick={() => toast.success("Resume coming soon!")}
                 className="group flex items-center gap-6"
               >

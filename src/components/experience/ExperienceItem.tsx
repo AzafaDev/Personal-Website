@@ -16,9 +16,9 @@ export const ExperienceItem = ({ exp }: ExperienceProps) => (
 
     <div className="space-y-4">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-        <h4 className="text-2xl font-bold uppercase tracking-tight group-hover:text-blue-400 transition-colors italic">
+        <p className="text-2xl font-bold uppercase tracking-tight group-hover:text-blue-400 transition-colors italic">
           {exp.title}
-        </h4>
+        </p>
         <span className="text-[10px] font-mono text-white uppercase tracking-widest bg-zinc-950 px-2 py-1 border border-zinc-900">
           {exp.period}
         </span>

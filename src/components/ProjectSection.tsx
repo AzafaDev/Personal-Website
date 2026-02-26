@@ -48,7 +48,10 @@ const ProjectSection = () => {
 
         {/* --- BOTTOM CALL TO ACTION --- */}
         <div className="mt-32 border-t border-zinc-900 pt-10 flex justify-center">
-          <button className="group flex items-center gap-4 text-xs font-black tracking-[0.5em] uppercase hover:text-blue-400 transition-colors">
+          <button
+            aria-label="button"
+            className="group flex items-center gap-4 text-xs font-black tracking-[0.5em] uppercase hover:text-blue-400 transition-colors"
+          >
             Explore All Projects
             <ArrowUpRight
               size={16}

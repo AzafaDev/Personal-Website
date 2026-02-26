@@ -73,6 +73,7 @@ const Navbar = () => {
             <div className="flex gap-6">
               {list.map((item, index) => (
                 <button
+                  aria-label="button"
                   key={index}
                   onClick={() => handleNavClick(item.link)}
                   className="text-xs font-bold text-gray-400 hover:text-white transition-all uppercase tracking-widest relative group"
@@ -96,6 +97,7 @@ const Navbar = () => {
 
           {/* MOBILE TOGGLE */}
           <button
+            aria-label="button"
             className="md:hidden text-white p-1"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -115,6 +117,7 @@ const Navbar = () => {
         <div className="bg-black/95 border border-white/10 backdrop-blur-xl rounded-2xl p-6 flex flex-col gap-4">
           {list.map((item, index) => (
             <button
+              aria-label="button"
               key={index}
               onClick={() => handleNavClick(item.link)}
               className="text-left text-lg font-bold text-gray-300 border-b border-white/5 pb-2 hover:text-blue-500 transition-colors"

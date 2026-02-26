@@ -30,9 +30,9 @@ const Footer = () => {
 
           {/* Navigation - Minimalist List */}
           <div className="md:col-span-3">
-            <h4 className="text-[10px] font-mono uppercase tracking-[0.4em] text-white mb-8 font-black">
+            <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-white mb-8 font-black">
               // Navigation
-            </h4>
+            </p>
             <ul className="space-y-4">
               {["Home", "About", "Portfolio", "Experience", "Contact"].map(
                 (item) => (
@@ -51,9 +51,9 @@ const Footer = () => {
 
           {/* Office - High Contrast */}
           <div className="md:col-span-4">
-            <h4 className="text-[10px] font-mono uppercase tracking-[0.4em] text-white mb-8 font-black">
+            <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-white mb-8 font-black">
               // Availability
-            </h4>
+            </p>
             <div className="space-y-6">
               <address className="not-italic text-sm text-white leading-none space-y-2 uppercase tracking-tighter">
                 <p>Tangerang, Banten</p>
@@ -78,6 +78,7 @@ const Footer = () => {
           </div>
 
           <button
+            aria-label="button"
             onClick={scrollToTop}
             className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white hover:text-white transition-colors"
           >

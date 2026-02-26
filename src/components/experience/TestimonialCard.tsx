@@ -27,9 +27,9 @@ export const TestimonialCard = ({ testi }: TestimonialProps) => (
         />
       </div>
       <div>
-        <h5 className="text-sm font-bold uppercase tracking-tight text-white">
+        <p className="text-sm font-bold uppercase tracking-tight text-white">
           {testi.name}
-        </h5>
+        </p>
         <p className="text-[10px] font-mono text-blue-400 uppercase tracking-widest">
           {testi.role}
         </p>

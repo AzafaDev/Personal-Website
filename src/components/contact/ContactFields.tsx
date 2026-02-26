@@ -31,6 +31,7 @@ export const ContactInput = ({
 
 export const ContactButton = () => (
   <button
+    aria-label="button"
     onClick={() => toast.error("Mail server coming soon! 🚀")}
     className="flex items-center gap-8 group pt-8"
   >
