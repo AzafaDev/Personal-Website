@@ -1,56 +1,56 @@
-import { motion } from "framer-motion";
-import ProjectCard from "./ProjectCard";
+// src/components/sections/Portfolio/ProjectSection.tsx
+import { ArrowUpRight } from "lucide-react";
+import { projects } from "../data/portoflio";
+import { ProjectCard } from "./project/ProjectCard";
 
 const ProjectSection = () => {
-  const projects = [
-    {
-      title: "E-Commerce Dashboard",
-      description:
-        "Membangun sistem manajemen inventaris real-time untuk XYZ Retail guna meningkatkan efisiensi operasional hingga 35%.",
-      tech: ["React", "Node.js", "PostgreSQL", "AWS"],
-      image: "/Dashboard.webp",
-    },
-    {
-      title: "AI Chat Application",
-      description:
-        "Mengintegrasikan OpenAI API untuk menciptakan asisten cerdas dengan fitur streaming respons dan manajemen konteks percakapan.",
-      tech: ["Next.js", "Tailwind", "OpenAI", "Firebase"],
-      image: "/AI.webp",
-    },
-    {
-      title: "Task Management Tool",
-      description:
-        "Solusi kolaborasi tim dengan fitur drag-and-drop Kanban yang mengoptimalkan alur kerja pengembang secara signifikan.",
-      tech: ["TypeScript", "Zustand", "Framer Motion"],
-      image: "/Management.webp",
-    },
-  ];
-
   return (
-    <section id="portfolio" className="w-full py-24 bg-[#0a0a0a] text-white">
+    <section id="portfolio" className="w-full py-20 md:py-32 bg-black text-white">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header Section */}
-        <div className="mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h4 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">
-              Featured{" "}
-              <span className="text-gray-300 italic font-light">Work</span>
-            </h4>
-            <div className="h-1 w-20 bg-[#4584f7] rounded-full" />
-          </motion.div>
+        
+        {/* --- HEADER SECTION --- */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 md:mb-32">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="size-2 bg-blue-600 rounded-full animate-pulse"></div>
+              <span className="text-xs font-black tracking-[0.5em] uppercase text-zinc-500">
+                Selected Works
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-none uppercase">
+              Proven <br />{" "}
+              <span
+                className="text-zinc-900"
+                style={{ WebkitTextStroke: "1px #3f3f46" }}
+              >
+                Solutions.
+              </span>
+            </h2>
+          </div>
+
+          {/* Sub-description (Hanya muncul di desktop) */}
+          <div className="max-w-xs border-l border-zinc-800 pl-6 hidden md:block">
+            <p className="text-xs text-zinc-500 leading-relaxed uppercase tracking-wider">
+              Membangun aplikasi yang tidak hanya indah secara visual, tapi juga memiliki performa yang kencang.
+            </p>
+          </div>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* --- GRID PROJECT --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20">
           {projects.map((project, index) => (
-            <ProjectCard project={project} index={index} key={index}/>
+            <ProjectCard project={project} key={index} />
           ))}
         </div>
+
+        {/* --- BOTTOM CALL TO ACTION --- */}
+        <div className="mt-32 border-t border-zinc-900 pt-10 flex justify-center">
+          <button className="group flex items-center gap-4 text-xs font-black tracking-[0.5em] uppercase hover:text-blue-600 transition-colors">
+            Explore All Projects
+            <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </button>
+        </div>
+
       </div>
     </section>
   );

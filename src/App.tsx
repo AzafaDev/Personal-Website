@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import ProjectSection from "./components/ProjectSection";
-import TechSection from "./components/SkillSection";
+import TechSection from "./components/TechSection";
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
         <ContactSection />
       </main>
       <Footer />
-      <Analytics/>
+      <Analytics />
     </div>
   );
 };

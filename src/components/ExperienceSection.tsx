@@ -1,177 +1,69 @@
-import { motion } from "framer-motion";
-import { Briefcase, Calendar, Star, Quote } from "lucide-react";
+// src/components/sections/Experience/ExperienceSection.tsx
+import { ArrowUpRight } from "lucide-react";
+import { experiences, testimonials } from "../data/portoflio";
+import { ExperienceItem } from "./experience/ExperienceItem";
+import { TestimonialCard } from "./experience/TestimonialCard";
 
 const ExperienceSection = () => {
-  const experiences = [
-    {
-      title: "Full-Stack Developer (Freelance)",
-      company: "Upwork / Self-Employed",
-      period: "2023 - Present",
-      desc: "Membangun solusi web kustom untuk klien internasional. Fokus pada skalabilitas dan integrasi API pihak ketiga.",
-      tasks: [
-        "Developing SaaS MVP",
-        "API Optimization",
-        "Database Architecting",
-      ],
-    },
-    {
-      title: "Frontend Developer",
-      company: "Tech Solutions ID",
-      period: "2021 - 2023",
-      desc: "Bertanggung jawab atas transformasi UI/UX menjadi kode yang responsif dan performan menggunakan ekosistem React.",
-      tasks: ["Component Library Design", "Performance Audit", "Unit Testing"],
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO at CloudScale",
-      text: "Akmal adalah developer yang sangat detail. Solusi yang diberikan tidak hanya menyelesaikan masalah, tapi juga memikirkan skalabilitas ke depan.",
-      img: "/sarah.webp",
-    },
-    {
-      name: "Budi Santoso",
-      role: "Project Manager",
-      text: "Komunikasinya sangat jelas. Project selesai lebih cepat dari deadline dengan kualitas kode yang sangat rapi.",
-      img: "/budi.webp",
-    },
-  ];
-
   return (
-    <section id="experience" className="w-full py-24 bg-[#0a0a0a] text-white">
+    <section
+      id="experience"
+      className="w-full py-24 bg-black text-white overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h4 className="text-4xl font-black tracking-tighter mb-4">
-                Work <span className="text-[#4584f7]">History</span>
-              </h4>
-              <p className="text-gray-400">
-                Perjalanan profesional saya dalam membangun produk digital.
-              </p>
-            </motion.div>
+        {/* --- SECTION HEADER --- */}
+        <div className="flex items-center gap-4 mb-20">
+          <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">
+            02 // Experience & Praise
+          </span>
+          <div className="h-[1px] flex-1 bg-zinc-800" />
+        </div>
 
-            <div className="space-y-8 relative">
-              <div className="absolute left-4.5 top-0 bottom-0 w-px bg-white/10" />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24">
+          {/* --- LEFT COLUMN: WORK HISTORY --- */}
+          <div className="lg:col-span-7 space-y-12">
+            <h3 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] mb-16">
+              Work <br />{" "}
+              <span
+                className="text-zinc-900"
+                style={{ WebkitTextStroke: "1px #3f3f46" }}
+              >
+                History.
+              </span>
+            </h3>
 
+            {/* Timeline Wrapper */}
+            <div className="relative border-l border-zinc-900 ml-2 space-y-16">
               {experiences.map((exp, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: idx * 0.2,
-                    type: "spring",
-                    stiffness: 50,
-                  }}
-                  className="relative pl-12"
-                >
-                  <div className="absolute left-0 top-1.5 size-9 bg-[#111] border border-white/10 rounded-full flex items-center justify-center z-10 group-hover:border-[#4584f7] transition-colors">
-                    <Briefcase className="size-4 text-[#4584f7]" />
-                  </div>
-
-                  <div className="bg-white/2 border border-white/5 p-6 rounded-2xl hover:border-[#4584f7]/30 transition-all duration-500">
-                    <div className="flex flex-wrap justify-between items-center gap-2 mb-4">
-                      <h4 className="text-xl font-bold text-white">
-                        {exp.title}
-                      </h4>
-                      <div className="flex items-center gap-2 text-xs font-mono text-gray-300 bg-white/5 px-3 py-1 rounded-full">
-                        <Calendar className="size-3" />
-                        {exp.period}
-                      </div>
-                    </div>
-                    <p className="text-[#4584f7] font-medium mb-2">
-                      {exp.company}
-                    </p>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                      {exp.desc}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.tasks.map((task, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="text-[10px] bg-white/5 text-gray-300 px-2 py-1 rounded-md border border-white/5 italic"
-                        >
-                          #{task}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
+                <ExperienceItem key={idx} exp={exp} />
               ))}
             </div>
           </div>
 
-          {/* Right Side: Testimonials */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h4 className="text-4xl font-black tracking-tighter mb-4">
-                What They <span className="text-gray-300">Say.</span>
-              </h4>
-              <p className="text-gray-400">
-                Fh4dback jujur dari kolaborator dan klien sebelumnya.
-              </p>
-            </motion.div>
+          {/* --- RIGHT COLUMN: SOCIAL PROOF --- */}
+          <div className="lg:col-span-5 space-y-12">
+            <h3 className="text-4xl font-bold tracking-tighter uppercase mb-16 text-right lg:text-left">
+              Social <span className="text-zinc-500">Proof.</span>
+            </h3>
 
-            <div className="grid gap-6">
+            <div className="space-y-8">
               {testimonials.map((testi, idx) => (
-                <motion.div
-                  key={idx}
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.3 }}
-                  className="relative p-8 bg-linear-to-br from-white/5 to-transparent border border-white/10 rounded-4xl overflow-hidden"
-                >
-                  <Quote className="absolute top-6 right-8 size-12 text-white/3 rotate-12" />
-
-                  <div className="flex items-center gap-4 mb-6">
-                    <img
-                      src={testi.img}
-                      alt={testi.name}
-                      className="size-12 rounded-full border border-[#4584f7]/50"
-                      loading="eager"
-                      fetchPriority="high"
-                      width={'48px'}
-                      height={'48px'}
-                    />
-                    <div>
-                      <h4 className="font-bold text-white leading-none mb-1">
-                        {testi.name}
-                      </h4>
-                      <p className="text-xs text-[#4584f7] font-mono">
-                        {testi.role}
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-300 italic leading-relaxed relative z-10">
-                    "{testi.text}"
-                  </p>
-
-                  <div className="flex gap-1 mt-6">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="size-3 fill-[#4584f7] text-[#4584f7]"
-                      />
-                    ))}
-                  </div>
-                </motion.div>
+                <TestimonialCard key={idx} testi={testi} />
               ))}
+            </div>
+
+            {/* External Link */}
+            <div className="pt-8 flex justify-end lg:justify-start">
+              <a
+                href="#"
+                className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-white transition-colors group"
+              >
+                View LinkedIn Recommendations
+                <ArrowUpRight
+                  size={14}
+                  className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                />
+              </a>
             </div>
           </div>
         </div>

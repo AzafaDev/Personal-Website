@@ -1,6 +1,5 @@
-import { Terminal, Menu, X, ArrowRight, PhoneCall } from "lucide-react";
+import { Terminal, Menu, X, PhoneCall } from "lucide-react";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -23,121 +22,108 @@ const Navbar = () => {
     { name: "Contact", link: "/#contact" },
   ];
 
+  const handleNavClick = (link: string) => {
+    setIsOpen(false);
+    if (link.includes("#")) {
+      const id = link.split("#")[1];
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate(link);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
-      className={`fixed top-0 z-50 w-full transition-all duration-500 border-b ${
-        scrolled
-          ? "bg-black/60 backdrop-blur-xl border-white/10 py-3"
-          : "bg-transparent border-transparent py-5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+        scrolled ? "py-3" : "py-5"
+      } absolute`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-white">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-3 group cursor-pointer"
+      <div className={`max-w-6xl mx-auto px-4 transition-all duration-500`}>
+        <div
+          className={`flex justify-between items-center px-6 py-3 rounded-2xl border transition-all ${
+            scrolled
+              ? "bg-black/80 backdrop-blur-md border-white/20 shadow-2xl"
+              : "bg-transparent border-transparent"
+          }`}
         >
-          <div className="relative">
-            <div className="absolute -inset-1 bg-[#4584f7] rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
-            <div className="relative p-2 bg-black rounded-lg border border-white/10 group-hover:border-[#4584f7]/50 transition-colors">
-              <a href="/" aria-label="home-link">
-                <Terminal className="text-[#4584f7] size-6" />
-              </a>
+          {/* LOGO: High Contrast Blue */}
+          <div
+            onClick={() => handleNavClick("/")}
+            className="flex items-center gap-2 cursor-pointer group"
+          >
+            <div className="bg-blue-600 p-2 rounded-lg shadow-[0_0_15px_rgba(37,99,235,0.5)]">
+              <Terminal className="text-white size-5" />
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="text-lg font-black tracking-tighter text-white">
+                AZAFA
+              </span>
+              <span className="text-[9px] font-bold text-blue-500 tracking-[0.2em] uppercase">
+                Studio
+              </span>
             </div>
           </div>
-          <div className="flex flex-col">
-            <a
-              className="text-xl font-bold tracking-tight leading-none"
-              href="/"
-              aria-label="home-link"
-            >
-              Azafa
-            </a>
-            <span className="text-[10px] text-[#4584f7] font-mono tracking-[0.2em] uppercase">
-              Developer
-            </span>
-          </div>
-        </motion.div>
 
-        <div className="hidden md:flex gap-10 items-center">
-          <div className="flex gap-8">
-            {list.map((item, index) => (
-              <motion.a
-                key={index}
-                href={item.link}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="text-sm font-medium text-gray-400 hover:text-white transition-colors relative group"
-                aria-label={item.name}
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#4584f7] transition-all duration-300 group-hover:w-full"></span>
-              </motion.a>
-            ))}
-          </div>
-
-          <motion.a
-            initial={{ opacity: 1, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="https://wa.link/q3wda6"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Contact me on WhatsApp"
-            className="group relative inline-flex items-center justify-center px-6 py-2.5 font-bold text-white bg-[#084ecf] rounded-xl shadow-lg transition-all"
-          >
-            <span className="relative z-10 flex items-center text-white font-bold">
-              Contact Me
-              <PhoneCall className="ml-2 size-4" />
-            </span>
-          </motion.a>
-        </div>
-
-        <button
-          className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
-          aria-label="hamburger-button"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X className="size-7" /> : <Menu className="size-7" />}
-        </button>
-      </div>
-
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl border-b border-white/10 overflow-hidden md:hidden"
-          >
-            <div className="px-6 py-8 flex flex-col gap-6">
+          {/* DESKTOP MENU: Minim Motion, Hover CSS only */}
+          <div className="hidden md:flex items-center gap-8">
+            <div className="flex gap-6">
               {list.map((item, index) => (
-                <motion.a
+                <button
                   key={index}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  href={item.link}
-                  onClick={() => {
-                    navigate(item.link);
-                    setTimeout(() => {
-                      setIsOpen(false);
-                    }, 1000);
-                  }}
-                  className="text-lg font-medium text-gray-300 hover:text-[#4584f7] transition-colors flex justify-between items-center group py-2" // Tambah padding biar gampang diklik jari
-                  aria-label={item.name}
+                  onClick={() => handleNavClick(item.link)}
+                  className="text-xs font-bold text-gray-400 hover:text-white transition-all uppercase tracking-widest relative group"
                 >
                   {item.name}
-                  <ArrowRight className="size-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                </motion.a>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                </button>
               ))}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+            {/* CTA Button: High Contrast */}
+            <a
+              href="https://wa.link/q3wda6"
+              target="_blank"
+              className="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-xl font-bold text-xs hover:bg-blue-600 hover:text-white transition-all shadow-lg active:scale-95"
+            >
+              HIRE ME
+              <PhoneCall className="size-3" />
+            </a>
+          </div>
+
+          {/* MOBILE TOGGLE */}
+          <button
+            className="md:hidden text-white p-1"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </div>
+
+      {/* MOBILE MENU: CSS Based transition (Ringan) */}
+      <div
+        className={`absolute top-full left-4 right-4 mt-2 transition-all duration-300 origin-top ${
+          isOpen
+            ? "scale-y-100 opacity-100"
+            : "scale-y-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="bg-black/95 border border-white/10 backdrop-blur-xl rounded-2xl p-6 flex flex-col gap-4">
+          {list.map((item, index) => (
+            <button
+              key={index}
+              onClick={() => handleNavClick(item.link)}
+              className="text-left text-lg font-bold text-gray-300 border-b border-white/5 pb-2 hover:text-blue-500 transition-colors"
+            >
+              {item.name}
+            </button>
+          ))}
+        </div>
+      </div>
     </nav>
   );
 };

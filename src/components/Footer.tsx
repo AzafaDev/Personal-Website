@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { Terminal, ArrowUp, Heart } from "lucide-react";
+import { Terminal, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -9,75 +8,87 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#0a0a0a] border-t border-white/5 pt-16 pb-8 text-white overflow-hidden">
+    <footer className="w-full bg-black border-t border-zinc-900 pt-20 pb-10 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          {/* Brand Section */}
-          <div className="md:col-span-2 space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
+          {/* Brand Section - Industrial Look */}
+          <div className="md:col-span-5 space-y-8">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-white/5 rounded-lg border border-white/10">
-                <Terminal className="text-[#4584f7] size-6" />
+              <div className="p-2 border border-zinc-800 bg-zinc-950">
+                <Terminal className="text-blue-600 size-5" />
               </div>
-              <span className="text-2xl font-bold tracking-tighter">Azafa</span>
+              <span className="text-xl font-black uppercase tracking-tighter italic">
+                Azafa<span className="text-blue-600">.</span>Dev
+              </span>
             </div>
-            <p className="text-gray-400 max-w-sm leading-relaxed">
+            <p className="text-zinc-500 max-w-sm text-sm leading-relaxed uppercase tracking-tight">
               Membangun solusi digital yang fokus pada fungsionalitas dan
               estetika. Mari berkolaborasi untuk menciptakan sesuatu yang luar
               biasa.
             </p>
           </div>
 
-          <div>
-            <h4 className="text-sm font-mono uppercase tracking-[0.2em] text-[#4584f7] mb-6">
-              Navigation
+          {/* Navigation - Minimalist List */}
+          <div className="md:col-span-3">
+            <h4 className="text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-600 mb-8 font-black">
+              // Navigation
             </h4>
             <ul className="space-y-4">
-              {["Home", "About", "Projects", "Contact"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={item === "Home" ? "/" : `/#${item.toLowerCase()}`}
-                    className="text-gray-400 hover:text-white transition-colors flex items-center group"
-                    aria-label="navigation-link"
-                  >
-                    <span className="h-px w-0 bg-[#4584f7] mr-0 group-hover:w-4 group-hover:mr-2 transition-all" />
-                    {item}
-                  </a>
-                </li>
-              ))}
+              {["Home", "About", "Portfolio", "Experience", "Contact"].map(
+                (item) => (
+                  <li key={item}>
+                    <a
+                      href={item === "Home" ? "/" : `/#${item.toLowerCase()}`}
+                      className="text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-blue-600 transition-colors flex items-center group"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-sm font-mono uppercase tracking-[0.2em] text-[#4584f7] mb-6">
-              Office
+          {/* Office - High Contrast */}
+          <div className="md:col-span-4">
+            <h4 className="text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-600 mb-8 font-black">
+              // Availability
             </h4>
-            <address className="not-italic text-gray-400 space-y-4">
-              <p>Tangerang, Banten</p>
-              <p>Indonesia</p>
-              <p className="text-white font-medium">akmal.dz.f@gmail.com</p>
-            </address>
+            <div className="space-y-6">
+              <address className="not-italic text-sm text-zinc-400 leading-none space-y-2 uppercase tracking-tighter">
+                <p>Tangerang, Banten</p>
+                <p>Indonesia (GMT+7)</p>
+              </address>
+              <div className="inline-block border-b border-blue-600 pb-1">
+                <a
+                  href="mailto:akmal.dz.f@gmail.com"
+                  className="text-sm font-black hover:text-blue-600 transition-colors"
+                >
+                  akmal.dz.f@gmail.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-gray-300 text-sm flex items-center gap-1">
-            © {currentYear} Azafa. Made with{" "}
-            <Heart size={14} className="text-red-500 fill-red-500" /> in
-            Indonesia
-          </p>
+        {/* Bottom Bar - Brutalist Footer */}
+        <div className="pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            © {currentYear} Azafa Archive — Built by Akmal Dzakwan
+          </div>
 
-          <motion.button
-            whileHover={{ y: -5 }}
-            whileTap={{ scale: 0.9 }}
+          <button
             onClick={scrollToTop}
-            className="group flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-white transition-colors"
-            aria-label="back-to-top-button"
+            className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-white transition-colors"
           >
-            BACK TO TOP
-            <div className="p-2 bg-white/5 rounded-full group-hover:bg-[#4584f7] transition-colors">
-              <ArrowUp size={16} />
+            Back to Top
+            <div className="size-10 border border-zinc-800 flex items-center justify-center group-hover:border-blue-600 group-hover:bg-blue-600 transition-all">
+              <ArrowUp
+                size={14}
+                className="group-hover:-translate-y-1 transition-transform"
+              />
             </div>
-          </motion.button>
+          </button>
         </div>
       </div>
     </footer>
