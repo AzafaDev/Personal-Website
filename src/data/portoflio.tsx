@@ -4,41 +4,17 @@ export const categories = [
   {
     title: "Frontend",
     icon: <Layout size={18} className="text-blue-500" />,
-    skills: [
-      { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
-      { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/white" },
-      {
-        name: "Tailwind",
-        icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
-      },
-      {
-        name: "TypeScript",
-        icon: "https://cdn.simpleicons.org/typescript/3178C6",
-      },
-    ],
+    skills: [{ name: "React" }, { name: "Next.js" }, { name: "Tailwind" }, { name: "TypeScript" }],
   },
   {
     title: "Backend",
     icon: <Server size={18} className="text-purple-500" />,
-    skills: [
-      { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
-      {
-        name: "PostgreSQL",
-        icon: "https://cdn.simpleicons.org/postgresql/4169E1",
-      },
-      { name: "Prisma", icon: "https://cdn.simpleicons.org/prisma/white" },
-      { name: "Express", icon: "https://cdn.simpleicons.org/express/white" },
-    ],
+    skills: [{ name: "Node.js" }, { name: "PostgreSQL" }, { name: "Prisma" }, { name: "Express" }],
   },
   {
     title: "Tools & Deploy",
     icon: <Wrench size={18} className="text-emerald-500" />,
-    skills: [
-      { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/white" },
-      { name: "Git", icon: "https://cdn.simpleicons.org/git/F05032" },
-      { name: "GitHub", icon: "https://cdn.simpleicons.org/github/white" },
-      { name: "NPM", icon: "https://cdn.simpleicons.org/npm/CB3837" },
-    ],
+    skills: [{ name: "Vercel" }, { name: "Git" }, { name: "GitHub" }, { name: "NPM" }],
   },
 ];
 
@@ -116,48 +92,20 @@ export const technologies = [
   {
     id: "01",
     category: "Frontend Development",
-    description:
-      "Crafting fast, responsive, and pixel-perfect user interfaces.",
-    skills: [
-      { name: "React", img: "https://cdn.simpleicons.org/react/61DAFB" },
-      { name: "Next.js", img: "https://cdn.simpleicons.org/nextdotjs/white" },
-      {
-        name: "Tailwind",
-        img: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
-      },
-      {
-        name: "TypeScript",
-        img: "https://cdn.simpleicons.org/typescript/3178C6",
-      },
-    ],
+    description: "Crafting fast, responsive, and pixel-perfect user interfaces.",
+    skills: [{ name: "React" }, { name: "Next.js" }, { name: "Tailwind" }, { name: "TypeScript" }],
   },
   {
     id: "02",
     category: "Backend Systems",
     description: "Building robust server-side logic and scalable databases.",
-    skills: [
-      {
-        name: "Node.js",
-        img: "https://cdn.simpleicons.org/nodedotjs/339933",
-      },
-      {
-        name: "PostgreSQL",
-        img: "https://cdn.simpleicons.org/postgresql/4169E1",
-      },
-      { name: "Prisma", img: "https://cdn.simpleicons.org/prisma/white" },
-      { name: "Express", img: "https://cdn.simpleicons.org/express/white" },
-    ],
+    skills: [{ name: "Node.js" }, { name: "PostgreSQL" }, { name: "Prisma" }, { name: "Express" }],
   },
   {
     id: "03",
     category: "Deployment & Tools",
     description: "Managing environments and ensuring seamless delivery.",
-    skills: [
-      { name: "Vercel", img: "https://cdn.simpleicons.org/vercel/white" },
-      { name: "Git", img: "https://cdn.simpleicons.org/git/F05032" },
-      { name: "GitHub", img: "https://cdn.simpleicons.org/github/white" },
-      { name: "NPM", img: "https://cdn.simpleicons.org/npm/CB3837" },
-    ],
+    skills: [{ name: "Vercel" }, { name: "Git" }, { name: "GitHub" }, { name: "NPM" }],
   },
 ];
 
