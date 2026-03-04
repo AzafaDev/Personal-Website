@@ -1,3 +1,5 @@
+// src/components/sections/Footer.tsx
+import { motion } from "framer-motion";
 import { Terminal, ArrowUp } from "lucide-react";
 
 const Footer = () => {
@@ -8,61 +10,66 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-black border-t border-zinc-900 pt-20 pb-10 text-white overflow-hidden">
+    <footer className="w-full bg-[#050505] border-t border-zinc-900/50 pt-20 pb-10 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
-          {/* Brand Section - Industrial Look */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
+          
+          {/* Brand Section - Subtle Pulse Animation */}
           <div className="md:col-span-5 space-y-8">
-            <div className="flex items-center gap-3">
-              <div className="p-2 border border-zinc-800 bg-zinc-950">
-                <Terminal className="text-blue-400 size-5" />
+            <div className="flex items-center gap-3 group cursor-default">
+              <div className="relative p-2 border border-zinc-800 bg-zinc-950 overflow-hidden">
+                <Terminal className="text-white size-4 relative z-10" />
+                {/* Non-hover animation: Subtle scanning effect */}
+                <motion.div 
+                  animate={{ y: [-20, 20] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 bg-white/5 w-full h-1/2"
+                />
               </div>
-              <span className="text-xl font-black uppercase tracking-tighter italic">
-                Azafa<span className="text-blue-400">.</span>Dev
+              <span className="text-xl font-light uppercase tracking-tighter italic">
+                Azafa<span className="text-zinc-500">.</span>Dev
               </span>
             </div>
-            <p className="text-white max-w-sm text-sm leading-relaxed uppercase tracking-tight">
-              Membangun solusi digital yang fokus pada fungsionalitas dan
-              estetika. Mari berkolaborasi untuk menciptakan sesuatu yang luar
-              biasa.
+            <p className="text-zinc-500 max-w-sm text-[11px] leading-relaxed uppercase tracking-wider font-light">
+              Membangun solusi digital dengan presisi penuh antara fungsionalitas 
+              dan estetika minimalis. Tersedia untuk kolaborasi terpilih.
             </p>
           </div>
 
-          {/* Navigation - Minimalist List */}
+          {/* Navigation - Minimalist Hover */}
           <div className="md:col-span-3">
-            <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-white mb-8 font-black">
-              // Navigation
+            <p className="text-[9px] font-medium uppercase tracking-[0.4em] text-zinc-600 mb-8">
+              // Sitemap
             </p>
             <ul className="space-y-4">
-              {["Home", "About", "Portfolio", "Experience", "Contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href={item === "Home" ? "/" : `/#${item.toLowerCase()}`}
-                      className="text-xs font-bold uppercase tracking-widest text-white hover:text-blue-400 transition-colors flex items-center group"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ),
-              )}
+              {["Home", "About", "Portfolio", "Experience", "Contact"].map((item) => (
+                <li key={item}>
+                  <a
+                    href={item === "Home" ? "/" : `/#${item.toLowerCase()}`}
+                    className="text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-all duration-500 flex items-center group gap-2"
+                  >
+                    <span className="w-0 h-[1px] bg-white group-hover:w-4 transition-all duration-500" />
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Office - High Contrast */}
+          {/* Office - High Contrast Address */}
           <div className="md:col-span-4">
-            <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-white mb-8 font-black">
+            <p className="text-[9px] font-medium uppercase tracking-[0.4em] text-zinc-600 mb-8">
               // Availability
             </p>
-            <div className="space-y-6">
-              <address className="not-italic text-sm text-white leading-none space-y-2 uppercase tracking-tighter">
+            <div className="space-y-8">
+              <address className="not-italic text-xs text-zinc-300 leading-relaxed space-y-1 uppercase tracking-widest font-light">
                 <p>Tangerang, Banten</p>
                 <p>Indonesia (GMT+7)</p>
               </address>
-              <div className="inline-block border-b border-blue-600 pb-1">
+              <div className="inline-block border-b border-zinc-800 pb-2 group">
                 <a
                   href="mailto:akmal.dz.f@gmail.com"
-                  className="text-sm font-black hover:text-blue-400 transition-colors"
+                  className="text-sm font-light tracking-tight text-zinc-400 group-hover:text-white transition-colors duration-500"
                 >
                   akmal.dz.f@gmail.com
                 </a>
@@ -71,25 +78,26 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar - Brutalist Footer */}
-        <div className="pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-[10px] font-mono text-white uppercase tracking-widest">
-            © {currentYear} Azafa Archive — Built by Akmal Dzakwan
+        {/* Bottom Bar - Brutalist Layout */}
+        <div className="pt-10 border-t border-zinc-900/50 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="text-[9px] font-medium text-zinc-600 uppercase tracking-[0.3em] flex items-center gap-2">
+             <span className="size-1 rounded-full bg-zinc-800 animate-pulse" />
+             © {currentYear} Azafa Archive — Akmal Dzakwan Faiz
           </div>
 
-          <button
-            aria-label="button"
+          <motion.button
+            whileHover={{ y: -5 }}
             onClick={scrollToTop}
-            className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white hover:text-white transition-colors"
+            className="group flex items-center gap-4 text-[9px] font-medium uppercase tracking-[0.4em] text-zinc-500 hover:text-white transition-all duration-500"
           >
             Back to Top
-            <div className="size-10 border border-zinc-800 flex items-center justify-center group-hover:border-blue-600 group-hover:bg-blue-600 transition-all">
+            <div className="size-10 border border-zinc-900 flex items-center justify-center group-hover:border-white group-hover:bg-white transition-all duration-700">
               <ArrowUp
-                size={14}
-                className="group-hover:-translate-y-1 transition-transform"
+                size={12}
+                className="text-zinc-500 group-hover:text-black group-hover:-translate-y-1 transition-all duration-500"
               />
             </div>
-          </button>
+          </motion.button>
         </div>
       </div>
     </footer>

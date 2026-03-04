@@ -1,64 +1,80 @@
 // src/components/sections/Portfolio/ProjectSection.tsx
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "../data/portoflio";
 import { ProjectCard } from "./project/ProjectCard";
 
 const ProjectSection = () => {
   return (
-    <section
-      id="portfolio"
-      className="w-full py-20 md:py-32 bg-black text-white"
-    >
+    <section id="portfolio" className="w-full py-24 md:py-40 bg-[#050505] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
+        
         {/* --- HEADER SECTION --- */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 md:mb-32">
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="size-2 bg-blue-600 rounded-full animate-pulse"></div>
-              <span className="text-xs font-black tracking-[0.5em] uppercase text-white">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24 md:mb-32">
+          <div className="space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-4"
+            >
+              <div className="h-px w-10 bg-zinc-800" />
+              <span className="text-zinc-500 font-medium text-[10px] tracking-[0.5em] uppercase">
                 Selected Works
               </span>
-            </div>
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-none uppercase">
-              Proven <br />{" "}
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-6xl md:text-9xl font-light tracking-tighter leading-none uppercase"
+            >
+              Proven <br />
               <span
-                className="text-[#95959D]"
-                style={{ WebkitTextStroke: "1px rgb(113, 113, 122)" }}
+                className="italic font-extralight text-zinc-800"
+                style={{ WebkitTextStroke: "1px #27272a" }}
               >
                 Solutions.
               </span>
-            </h2>
+            </motion.h2>
           </div>
 
-          {/* Sub-description (Hanya muncul di desktop) */}
-          <div className="max-w-xs border-l border-zinc-800 pl-6 hidden md:block">
-            <p className="text-xs text-white leading-relaxed uppercase tracking-wider">
-              Membangun aplikasi yang tidak hanya indah secara visual, tapi juga
-              memiliki performa yang kencang.
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="max-w-xs border-l border-zinc-900 pl-8 hidden md:block"
+          >
+            <p className="text-[11px] text-zinc-500 leading-relaxed uppercase tracking-[0.2em] font-light">
+              Membangun solusi digital yang mengutamakan <span className="text-white italic">clean architecture</span> dan performa tanpa kompromi.
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* --- GRID PROJECT --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-24">
           {projects.map((project, index) => (
-            <ProjectCard project={project} key={index} />
+            <ProjectCard project={project} key={index} index={index} />
           ))}
         </div>
 
-        {/* --- BOTTOM CALL TO ACTION --- */}
-        <div className="mt-32 border-t border-zinc-900 pt-10 flex justify-center">
-          <button
-            aria-label="button"
-            className="group flex items-center gap-4 text-xs font-black tracking-[0.5em] uppercase hover:text-blue-400 transition-colors"
-          >
+        {/* --- BOTTOM CTA --- */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-32 border-t border-zinc-900/50 pt-12 flex justify-center"
+        >
+          <button className="group flex items-center gap-6 text-[10px] font-medium tracking-[0.4em] uppercase text-zinc-500 hover:text-white transition-all">
             Explore All Projects
-            <ArrowUpRight
-              size={16}
-              className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-            />
+            <div className="size-10 rounded-full border border-zinc-900 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-500">
+              <ArrowUpRight size={14} className="group-hover:text-black transition-colors" />
+            </div>
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

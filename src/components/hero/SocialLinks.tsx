@@ -1,28 +1,39 @@
 // src/components/ui/SocialLinks.tsx
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Instagram } from "lucide-react";
+import { motion } from "framer-motion";
 
-export const SocialLinks = ({ className = "" }: { className?: string }) => (
-  <div className={`flex items-center gap-6 ${className}`}>
-    {/* GitHub Link */}
-    <a
-      href="https://github.com/AzafaDev"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white hover:text-white transition-colors"
-      aria-label="GitHub Profile"
-    >
-      <Github size={20} />
-    </a>
+export const SocialLinks = () => {
+  const socials = [
+    { name: "GitHub", href: "https://github.com/AzafaDev", icon: <Github size={16} /> },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/akmal-dzakwan-faiz-0bb98839b/", icon: <Linkedin size={16} /> },
+    { name: "Instagram", href: "https://instagram.com/", icon: <Instagram size={16} /> },
+  ];
 
-    {/* LinkedIn Link */}
-    <a
-      href="https://linkedin.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white hover:text-white transition-colors"
-      aria-label="LinkedIn Profile"
-    >
-      <Linkedin size={20} />
-    </a>
-  </div>
-);
+  return (
+    <div className="flex items-center gap-8">
+      {socials.map((social, index) => (
+        <motion.a
+          key={index}
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          // Animasi "Bernapas": Opacity naik turun & Gerakan vertikal tipis
+          animate={{ 
+            opacity: [0.2, 0.5, 0.2], 
+            y: [0, -3, 0] 
+          }}
+          transition={{ 
+            duration: 5, 
+            repeat: Infinity, 
+            delay: index * 0.8, // Wave effect (bergantian)
+            ease: "easeInOut" 
+          }}
+          className="text-white hover:opacity-100 transition-opacity duration-300"
+          aria-label={social.name}
+        >
+          {social.icon}
+        </motion.a>
+      ))}
+    </div>
+  );
+};

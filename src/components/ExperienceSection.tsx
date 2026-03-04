@@ -1,4 +1,5 @@
 // src/components/sections/Experience/ExperienceSection.tsx
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { experiences, testimonials } from "../data/portoflio";
 import { ExperienceItem } from "./experience/ExperienceItem";
@@ -6,65 +7,75 @@ import { TestimonialCard } from "./experience/TestimonialCard";
 
 const ExperienceSection = () => {
   return (
-    <section
-      id="experience"
-      className="w-full py-24 bg-black text-white overflow-hidden"
-    >
+    <section id="experience" className="w-full py-24 md:py-40 bg-[#050505] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
+        
         {/* --- SECTION HEADER --- */}
-        <div className="flex items-center gap-4 mb-20">
-          <span className="text-blue-400 font-black text-xs uppercase tracking-[0.3em]">
-            02 // Experience & Praise
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-4 mb-24"
+        >
+          <span className="text-zinc-500 font-medium text-[10px] uppercase tracking-[0.5em]">
+            02 // Journey & Trust
           </span>
-          <div className="h-[1px] flex-1 bg-zinc-800" />
-        </div>
+          <div className="h-[1px] flex-1 bg-zinc-900/50" />
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24">
-          {/* --- LEFT COLUMN: WORK HISTORY --- */}
-          <div className="lg:col-span-7 space-y-12">
-            <h3 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] mb-16">
-              Work <br />{" "}
-              <span
-                className="text-[#95959D]"
-                style={{ WebkitTextStroke: "1px rgb(113, 113, 122)" }}
-              >
+          
+          {/* --- LEFT: WORK HISTORY (7 Kolom) --- */}
+          <div className="lg:col-span-7 space-y-20">
+            <motion.h3 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-6xl md:text-8xl font-light tracking-tighter uppercase leading-none"
+            >
+              Work <br />
+              <span className="italic font-extralight text-zinc-800" style={{ WebkitTextStroke: "1px #27272a" }}>
                 History.
               </span>
-            </h3>
+            </motion.h3>
 
-            {/* Timeline Wrapper */}
-            <div className="relative border-l border-zinc-900 ml-2 space-y-16">
+            <div className="relative border-l border-zinc-900/50 ml-2 space-y-20">
               {experiences.map((exp, idx) => (
-                <ExperienceItem key={idx} exp={exp} />
+                <ExperienceItem key={idx} exp={exp} index={idx} />
               ))}
             </div>
           </div>
 
-          {/* --- RIGHT COLUMN: SOCIAL PROOF --- */}
-          <div className="lg:col-span-5 space-y-12">
-            <h3 className="text-4xl font-bold tracking-tighter uppercase mb-16 text-right lg:text-left">
-              Social <span className="text-white">Proof.</span>
-            </h3>
+          {/* --- RIGHT: SOCIAL PROOF (Mulai dari Kolom 9, Lebar 4 Kolom) --- */}
+          <div className="lg:col-start-9 lg:col-span-4 space-y-16">
+             <motion.h3 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl font-light tracking-tight uppercase border-b border-zinc-900 pb-6 text-right lg:text-left"
+            >
+              Social <span className="italic text-zinc-500">Proof.</span>
+            </motion.h3>
 
-            <div className="space-y-8">
+            <div className="space-y-10">
               {testimonials.map((testi, idx) => (
-                <TestimonialCard key={idx} testi={testi} />
+                <TestimonialCard key={idx} testi={testi} index={idx} />
               ))}
             </div>
 
-            {/* External Link */}
-            <div className="pt-8 flex justify-end lg:justify-start">
-              <a
-                href="#"
-                className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white hover:text-white transition-colors group"
-              >
-                View LinkedIn Recommendations
-                <ArrowUpRight
-                  size={14}
-                  className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                />
+            <motion.div 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="pt-6"
+            >
+              <a href="#" className="group flex items-center justify-between py-5 border-t border-zinc-900">
+                <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-zinc-500 group-hover:text-white transition-colors">
+                  LinkedIn Recommendations
+                </span>
+                <ArrowUpRight size={14} className="text-zinc-700 group-hover:text-white transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
               </a>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 // src/components/sections/About/AboutSection.tsx
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import toast from "react-hot-toast";
 import { categories } from "../data/portoflio";
@@ -9,95 +10,143 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="relative w-full py-24 bg-black text-white overflow-hidden"
+      className="relative w-full py-32 bg-[#050505] text-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-12">
           {/* --- KIRI: HEADLINE & VISUAL --- */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="flex items-center gap-4">
-              <span className="text-blue-400 font-bold text-xs uppercase tracking-[0.3em]">
-                01 // Who is Azafa?
+          <div className="lg:col-span-5 space-y-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-4"
+            >
+              <span className="text-zinc-500 font-medium text-[10px] uppercase tracking-[0.4em]">
+                01 // Perspective
               </span>
-              <div className="h-[1px] flex-1 bg-zinc-800" />
-            </div>
+              <div className="h-[1px] w-12 bg-zinc-800" />
+            </motion.div>
 
-            <h2 className="text-6xl md:text-8xl font-black leading-[0.85] tracking-tighter uppercase">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="text-6xl md:text-7xl font-light leading-[1.1] tracking-tighter"
+            >
               Driven by <br />
-              <span className="text-blue-400 italic">Curiosity.</span>
-            </h2>
+              <motion.span
+                // Animasi warna teks yang mengalir pelan
+                animate={{ color: ["#3f3f46", "#fafafa", "#3f3f46"] }}
+                transition={{ duration: 8, repeat: Infinity }}
+                className="italic font-extralight text-5xl md:text-6xl"
+              >
+                Curiosity.
+              </motion.span>
+            </motion.h2>
 
             <AboutVisual />
           </div>
 
           {/* --- KANAN: NARRATIVE & SKILLS --- */}
-          <div className="lg:col-span-7 space-y-12">
-            {/* Teks Deskripsi */}
-            <div className="space-y-6">
-              <h3 className="text-2xl md:text-4xl font-bold leading-tight">
+          <div className="lg:col-span-7 space-y-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="space-y-8"
+            >
+              <h3 className="text-2xl md:text-3xl font-light leading-relaxed text-zinc-300">
                 Self-taught passion meets{" "}
-                <span className="text-blue-400">professional expertise.</span>
+                <span className="text-white border-b border-zinc-800">
+                  professional expertise.
+                </span>
               </h3>
 
-              <div className="space-y-4 text-white leading-relaxed text-justify">
+              <div className="space-y-6 text-zinc-400 font-light leading-relaxed text-lg max-w-2xl">
                 <p>
-                  Perjalanan saya dimulai secara <strong>otodidak</strong>,
-                  didorong oleh rasa penasaran bagaimana dunia digital bekerja.
-                  Untuk memperdalam fundamental, saya mengasah kemampuan secara
-                  profesional di{" "}
-                  <strong>Purwadhika Digital Technology School</strong>.
+                  Perjalanan saya di industri IT dimulai sebagai seorang{" "}
+                  <span className="text-zinc-200">Fresh Graduate</span> yang
+                  belajar secara <span className="text-zinc-200">otodidak</span>
+                  . Didorong oleh rasa penasaran mendalam, saya kemudian
+                  memantapkan fundamental dan profesionalisme saya melalui
+                  program intensif di{" "}
+                  <span className="text-zinc-200 italic">
+                    Purwadhika Digital Technology School
+                  </span>
+                  .
                 </p>
+
                 <p>
-                  Saya percaya produk digital yang sukses adalah kombinasi dari{" "}
-                  <strong>performa, tampilan, dan kode yang bersih</strong>.
-                  Tidak ada kompromi pada setiap pixel dan logika yang saya
-                  bangun.
+                  Sebagai seorang{" "}
+                  <span className="text-white">Full-stack Web Developer</span>,
+                  fokus utama saya adalah menciptakan keseimbangan antara{" "}
+                  <span className="italic">clean code</span>, performa yang
+                  efisien, dan antarmuka yang intuitif. Saya percaya bahwa
+                  setiap baris kode harus memberikan nilai nyata dan pengalaman
+                  digital yang luar biasa bagi penggunanya.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Tech Stack Categories */}
-            <div className="space-y-10">
+            {/* Tech Stack Categories dengan Auto-Reveal */}
+            <div className="space-y-12">
               {categories.map((cat, idx) => (
-                <div key={idx} className="space-y-4">
-                  {/* Category Header */}
-                  <div className="flex items-center gap-3">
-                    {cat.icon}
-                    <span className="text-xs font-black tracking-[0.2em] uppercase text-white">
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 * idx, duration: 0.8 }}
+                  className="space-y-6"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-zinc-600">
                       {cat.title}
                     </span>
-                    <div className="h-[1px] flex-1 bg-zinc-900" />
+                    <div className="h-[1px] flex-1 bg-zinc-900/50" />
                   </div>
 
-                  {/* Skills Grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {cat.skills.map((skill, sIdx) => (
+                      // Tambahkan index total agar delay tiap card unik
                       <SkillCard
                         key={sIdx}
                         icon={skill.icon}
                         name={skill.name}
+                        index={sIdx + idx * 4}
                       />
                     ))}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            {/* Tombol Resume */}
-            <div className="pt-4">
+            {/* Resume Button dengan Subtle Bounce */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="pt-6"
+            >
               <button
-                aria-label="button"
                 onClick={() => toast.success("Resume coming soon!")}
-                className="group flex items-center gap-6"
+                className="group flex items-center gap-8 py-4 border-t border-zinc-900 w-full"
               >
-                <span className="text-sm font-black text-white tracking-widest uppercase border-b-2 border-blue-600 pb-1 group-hover:pr-10 transition-all">
-                  Download Resume
+                <span className="text-xs font-medium text-zinc-500 tracking-[0.3em] uppercase">
+                  Download Full CV
                 </span>
-                <div className="size-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-all">
-                  <ArrowUpRight size={20} />
-                </div>
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                  className="ml-auto size-10 rounded-full border border-zinc-800 flex items-center justify-center"
+                >
+                  <ArrowUpRight size={16} className="text-zinc-500" />
+                </motion.div>
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

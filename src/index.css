@@ -1,12 +1,17 @@
 @import "tailwindcss";
 
-body{
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
+:root {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
-html{
-  scroll-behavior: smooth;
+body {
+  font-family: var(--font-sans);
+  @apply antialiased bg-[#050505];
+}
+
+.font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
 }

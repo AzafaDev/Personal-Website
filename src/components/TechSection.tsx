@@ -1,34 +1,48 @@
 // src/components/sections/Skills/TechSection.tsx
+import { motion } from "framer-motion";
 import { technologies } from "../data/portoflio";
 import { TechRow } from "./skills/TechRow";
 
 const TechSection = () => {
   return (
-    <section className="w-full py-16 md:py-32 bg-black text-white" id="skills">
+    <section className="w-full py-24 md:py-40 bg-[#050505] text-white overflow-hidden" id="skills">
       <div className="max-w-7xl mx-auto px-6">
+        
         {/* --- [HEADER SECTION] --- */}
-        <div className="mb-16 md:mb-24">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-blue-600" />
-            <span className="text-blue-400 font-mono text-xs tracking-[0.5em] uppercase">
-              My Arsenal
+        <div className="mb-20 md:mb-32">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-4 mb-8"
+          >
+            <div className="h-px w-10 bg-zinc-800" />
+            <span className="text-zinc-500 font-medium text-[10px] tracking-[0.5em] uppercase">
+              Technical Arsenal
             </span>
-          </div>
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-none italic uppercase">
+          </motion.div>
+
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-6xl md:text-9xl font-light tracking-tighter leading-none uppercase"
+          >
             Tech{" "}
             <span
-              className="text-[#95959D]"
-              style={{ WebkitTextStroke: "1px rgb(113, 113, 122)" }}
+              className="italic font-extralight text-zinc-800"
+              style={{ WebkitTextStroke: "1px #27272a" }} // Zinc-800 stroke
             >
               Stack.
             </span>
-          </h2>
+          </motion.h2>
         </div>
 
         {/* --- [LIST TEKNOLOGI] --- */}
-        <div className="flex flex-col border-t border-zinc-900">
-          {technologies.map((group) => (
-            <TechRow key={group.id} group={group} />
+        <div className="flex flex-col border-t border-zinc-900/50">
+          {technologies.map((group, index) => (
+            <TechRow key={group.id} group={group} index={index} />
           ))}
         </div>
       </div>
