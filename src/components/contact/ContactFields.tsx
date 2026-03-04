@@ -1,5 +1,4 @@
 // src/components/sections/Contact/contact/ContactFields.tsx
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import toast from "react-hot-toast";
 
