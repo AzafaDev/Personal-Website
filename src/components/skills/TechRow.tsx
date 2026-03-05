@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { techIcons } from "../../data/portoflio";
 
-export const TechRow = ({ group, index }: { group: any, index: number }) => (
-  <motion.div 
+export const TechRow = ({ group, index }: { group: any; index: number }) => (
+  <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -11,11 +11,10 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
     className="group relative border-b border-zinc-900/50 py-10 md:py-16 transition-all duration-700 md:hover:bg-zinc-900/10"
   >
     <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0">
-      
       {/* --- [1] INDEX NUMBER --- */}
       {/* Muncul hanya di desktop untuk menjaga kebersihan layout mobile */}
       <div className="lg:col-span-1 hidden lg:flex">
-        <span className="font-light text-zinc-700 text-sm group-hover:text-white transition-colors duration-500">
+        <span className="font-light text-[#9999A3] text-sm group-hover:text-white transition-colors duration-500">
           0{index + 1}
         </span>
       </div>
@@ -25,7 +24,7 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
         <h3 className="text-2xl md:text-4xl font-light tracking-tight mb-2 md:group-hover:translate-x-3 transition-transform duration-700 uppercase">
           {group.category}
         </h3>
-        <p className="text-zinc-500 text-[10px] md:text-sm max-w-xs font-light tracking-wide leading-relaxed">
+        <p className="text-[#98989F] text-[10px] md:text-sm max-w-xs font-light tracking-wide leading-relaxed">
           {group.description}
         </p>
       </div>
@@ -35,18 +34,20 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
         <div className="flex flex-wrap gap-5 md:gap-10 lg:justify-end">
           {group.skills.map((skill: any, idx: number) => {
             // Logika pemetaan string nama ke key icon SVG
-            const iconKey = skill.name.toLowerCase().replace(/[.\s-]/g, "") as keyof typeof techIcons;
+            const iconKey = skill.name
+              .toLowerCase()
+              .replace(/[.\s-]/g, "") as keyof typeof techIcons;
             const IconSVG = techIcons[iconKey];
 
             return (
-              <motion.div 
+              <motion.div
                 key={idx}
                 animate={{ y: [0, -5, 0] }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity, 
-                  delay: idx * 0.2, 
-                  ease: "easeInOut" 
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  delay: idx * 0.2,
+                  ease: "easeInOut",
                 }}
                 className="flex flex-col items-center gap-3"
               >
@@ -54,7 +55,8 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
                   - Mobile: Icon langsung menyala (Grayscale-0) agar user HP langsung tahu teknologinya.
                   - Desktop: Default redup (Grayscale), menyala saat row di-hover untuk fokus visual.
                 */}
-                <div className="size-6 md:size-7 transition-all duration-700 
+                <div
+                  className="size-6 md:size-7 transition-all duration-700 
                   opacity-80 grayscale-0 
                   md:opacity-30 md:grayscale md:group-hover:opacity-100 md:group-hover:grayscale-0 md:group-hover:scale-110"
                 >
@@ -64,8 +66,9 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
                 </div>
 
                 {/* Nama Skill: Muncul halus di mobile, muncul saat hover di desktop */}
-                <span className="text-[8px] font-medium uppercase tracking-[0.2em] 
-                  text-zinc-500 opacity-60
+                <span
+                  className="text-[8px] font-medium uppercase tracking-[0.2em] 
+                  text-[#98989F] opacity-60
                   md:opacity-0 md:group-hover:opacity-100 md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-700"
                 >
                   {skill.name}
@@ -80,7 +83,10 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
       {/* Icon interaktif yang berputar & muncul saat hover (Desktop Only) */}
       <div className="hidden lg:col-span-1 lg:flex justify-end pr-4">
         <div className="size-10 rounded-full border border-zinc-900 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:border-zinc-700 transition-all duration-700">
-          <ArrowRight className="text-zinc-500 group-hover:text-white -rotate-45 group-hover:rotate-0 transition-transform duration-700" size={16} />
+          <ArrowRight
+            className="text-[#98989F] group-hover:text-white -rotate-45 group-hover:rotate-0 transition-transform duration-700"
+            size={16}
+          />
         </div>
       </div>
     </div>

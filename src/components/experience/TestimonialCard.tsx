@@ -1,25 +1,31 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
-export const TestimonialCard = ({ testi, index }: { testi: any, index: number }) => (
-  <motion.div 
+export const TestimonialCard = ({
+  testi,
+  index,
+}: {
+  testi: any;
+  index: number;
+}) => (
+  <motion.div
     initial={{ opacity: 0, y: 20 }}
-    whileInView={{ 
-      opacity: 1, 
-      y: [20, -5, 0] // Keyframes: transisi masuk sekaligus trigger efek floating
+    whileInView={{
+      opacity: 1,
+      y: [20, -5, 0], // Keyframes: transisi masuk sekaligus trigger efek floating
     }}
     viewport={{ once: true }}
-    transition={{ 
+    transition={{
       // Opacity hanya berjalan sekali saat muncul
       opacity: { duration: 0.8, delay: index * 0.2 },
       // Koordinat Y berulang terus-menerus (infinite floating)
       y: {
         duration: 5,
         repeat: Infinity,
-        repeatType: "reverse", 
+        repeatType: "reverse",
         ease: "easeInOut",
-        delay: index * 0.3
-      }
+        delay: index * 0.3,
+      },
     }}
     className="relative p-8 bg-zinc-900/20 border border-zinc-900/50 rounded-2xl group transition-all duration-700 md:hover:bg-zinc-900/40 md:hover:border-zinc-700"
   >
@@ -35,14 +41,18 @@ export const TestimonialCard = ({ testi, index }: { testi: any, index: number })
     <div className="flex items-center gap-4 pt-6 border-t border-zinc-900/50">
       {/* Avatar dengan Grayscale effect yang hilang saat hover */}
       <div className="size-10 rounded-full bg-zinc-900 overflow-hidden border border-zinc-800 grayscale group-hover:grayscale-0 transition-all duration-700">
-        <img src={testi.img} alt={testi.name} className="w-full h-full object-cover" />
+        <img
+          src={testi.img}
+          alt={testi.name}
+          className="w-full h-full object-cover"
+        />
       </div>
-      
+
       <div className="flex flex-col">
         <p className="text-xs font-medium uppercase tracking-wider text-white">
           {testi.name}
         </p>
-        <p className="text-[9px] font-medium text-zinc-600 uppercase tracking-widest mt-0.5">
+        <p className="text-[9px] font-medium text-[#9797A0] uppercase tracking-widest mt-0.5">
           {testi.role}
         </p>
       </div>

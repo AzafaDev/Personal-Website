@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-export const ExperienceItem = ({ exp, index }: { exp: any, index: number }) => (
-  <motion.div 
+export const ExperienceItem = ({ exp, index }: { exp: any; index: number }) => (
+  <motion.div
     initial={{ opacity: 0, x: -20 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
@@ -17,7 +17,7 @@ export const ExperienceItem = ({ exp, index }: { exp: any, index: number }) => (
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div className="space-y-1">
           {/* Nama Perusahaan dengan prefix komentar (code-style) */}
-          <p className="text-zinc-500 text-[10px] font-medium uppercase tracking-[0.2em]">
+          <p className="text-[#98989F] text-[10px] font-medium uppercase tracking-[0.2em]">
             // {exp.company}
           </p>
           {/* Nama Jabatan */}
@@ -25,15 +25,15 @@ export const ExperienceItem = ({ exp, index }: { exp: any, index: number }) => (
             {exp.title}
           </h4>
         </div>
-        
+
         {/* Periode Waktu */}
-        <span className="text-[9px] font-medium text-zinc-500 uppercase tracking-widest border border-zinc-900 px-3 py-1.5 rounded-full">
+        <span className="text-[9px] font-medium text-[#98989F] uppercase tracking-widest border border-zinc-900 px-3 py-1.5 rounded-full">
           {exp.period}
         </span>
       </div>
 
       {/* --- [3] DESCRIPTION --- */}
-      <p className="text-zinc-500 text-sm leading-relaxed font-light max-w-2xl text-justify">
+      <p className="text-[#98989F] text-sm leading-relaxed font-light max-w-2xl text-justify">
         {exp.desc}
       </p>
 
@@ -41,9 +41,9 @@ export const ExperienceItem = ({ exp, index }: { exp: any, index: number }) => (
       {/* List pencapaian atau teknologi spesifik dalam peran tersebut */}
       <div className="flex flex-wrap gap-2 pt-2">
         {exp.tasks.map((task: string, tIdx: number) => (
-          <span 
-            key={tIdx} 
-            className="text-[8px] font-medium text-zinc-600 border border-zinc-900/50 px-2 py-1 rounded group-hover:border-zinc-800 group-hover:text-zinc-400 transition-colors duration-500"
+          <span
+            key={tIdx}
+            className="text-[8px] font-medium text-[#9797A0] border border-zinc-900/50 px-2 py-1 rounded group-hover:border-zinc-800 group-hover:text-zinc-400 transition-colors duration-500"
           >
             {task}
           </span>

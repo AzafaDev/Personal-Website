@@ -3,25 +3,30 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import toast from "react-hot-toast";
 
-export const ProjectCard = ({ project, index }: { project: any; index: number }) => {
-  
+export const ProjectCard = ({
+  project,
+  index,
+}: {
+  project: any;
+  index: number;
+}) => {
   const handleNavigation = (e: React.MouseEvent) => {
     if (project.link === "/#" || !project.link) {
       e.preventDefault();
       toast.success("Case study coming soon! 🚀", {
         style: {
-          borderRadius: '12px',
-          background: '#09090b',
-          color: '#fafafa',
-          fontSize: '11px',
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          border: '1px solid #27272a',
-          padding: '12px 20px',
+          borderRadius: "12px",
+          background: "#09090b",
+          color: "#fafafa",
+          fontSize: "11px",
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          border: "1px solid #27272a",
+          padding: "12px 20px",
         },
         iconTheme: {
-          primary: '#fff',
-          secondary: '#000',
+          primary: "#fff",
+          secondary: "#000",
         },
       });
     }
@@ -65,10 +70,15 @@ export const ProjectCard = ({ project, index }: { project: any; index: number })
 
         {/* Floating Arrow Badge */}
         <div className="absolute top-4 right-4 md:top-6 md:right-6 overflow-hidden">
-          <div className="size-8 md:size-12 rounded-full bg-white md:bg-white/10 backdrop-blur-md flex items-center justify-center 
+          <div
+            className="size-8 md:size-12 rounded-full bg-white md:bg-white/10 backdrop-blur-md flex items-center justify-center 
                          opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500
-                         md:-translate-x-4 md:translate-y-4 md:group-hover:translate-x-0 md:group-hover:translate-y-0">
-            <ArrowUpRight size={16} className="text-black md:text-white md:size-5" />
+                         md:-translate-x-4 md:translate-y-4 md:group-hover:translate-x-0 md:group-hover:translate-y-0"
+          >
+            <ArrowUpRight
+              size={16}
+              className="text-black md:text-white md:size-5"
+            />
           </div>
         </div>
       </motion.div>
@@ -76,7 +86,7 @@ export const ProjectCard = ({ project, index }: { project: any; index: number })
       {/* Project Info */}
       <div className="flex flex-col gap-4 px-1 transition-transform duration-700 md:group-hover:translate-x-2">
         <div className="flex items-center gap-4">
-          <span className="text-[9px] font-medium tracking-[0.4em] uppercase text-zinc-500 md:group-hover:text-white transition-colors duration-500">
+          <span className="text-[9px] font-medium tracking-[0.4em] uppercase text-[#98989F] md:group-hover:text-white transition-colors duration-500">
             {project.category}
           </span>
           <div className="h-px w-8 bg-zinc-900 transition-all duration-700 md:group-hover:w-full md:group-hover:bg-zinc-700" />
@@ -86,7 +96,7 @@ export const ProjectCard = ({ project, index }: { project: any; index: number })
           <h3 className="text-2xl font-light tracking-tighter text-white">
             {project.title}
           </h3>
-          <p className="text-[11px] md:text-xs text-zinc-500 leading-relaxed font-light line-clamp-2 md:group-hover:text-zinc-400 transition-colors">
+          <p className="text-[11px] md:text-xs text-[#98989F] leading-relaxed font-light line-clamp-2 md:group-hover:text-zinc-400 transition-colors">
             {project.description}
           </p>
         </div>
@@ -97,7 +107,7 @@ export const ProjectCard = ({ project, index }: { project: any; index: number })
             <span
               key={i}
               className="text-[8px] font-medium px-3 py-1.5 rounded-full border border-zinc-900 uppercase tracking-widest transition-all duration-500
-                         text-zinc-400 md:text-zinc-600 
+                         text-zinc-400 md:text-[#9797A0] 
                          md:group-hover:border-zinc-500 md:group-hover:text-white"
             >
               {t}

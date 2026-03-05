@@ -40,23 +40,24 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-100 transition-all duration-500 ${
-      scrolled ? "py-4 md:py-6" : "py-8"
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-100 transition-all duration-500 ${
+        scrolled ? "py-4 md:py-6" : "py-8"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Container Utama Navbar */}
-        <motion.div 
+        <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className={`flex justify-between items-center px-6 py-3 rounded-2xl border transition-all duration-700 ${
-            scrolled 
-              ? "bg-black/60 backdrop-blur-xl border-zinc-800 shadow-2xl" 
+            scrolled
+              ? "bg-black/60 backdrop-blur-xl border-zinc-800 shadow-2xl"
               : "bg-transparent border-transparent"
           }`}
         >
-          
           {/* Logo & Brand */}
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => handleNavClick("/")}
@@ -66,7 +67,7 @@ const Navbar = () => {
               <Terminal className="text-black size-4" />
             </div>
             <span className="text-lg font-bold tracking-tight text-white uppercase">
-              AZAFA<span className="text-zinc-500">.</span>DEV
+              AZAFA<span className="text-[#98989F]">.</span>DEV
             </span>
           </motion.div>
 
@@ -95,7 +96,10 @@ const Navbar = () => {
               className="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-xl font-bold text-xs group transition-all"
             >
               HIRE ME
-              <ArrowUpRight size={14} className="group-hover:rotate-45 transition-transform duration-300" />
+              <ArrowUpRight
+                size={14}
+                className="group-hover:rotate-45 transition-transform duration-300"
+              />
             </motion.a>
           </div>
 

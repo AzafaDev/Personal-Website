@@ -13,7 +13,6 @@ const AboutSection = () => {
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-12">
-          
           {/* --- BAGIAN KIRI: HEADLINE & VISUAL DEKORATIF --- */}
           <div className="lg:col-span-5 space-y-12">
             {/* Label Penomoran Section */}
@@ -23,7 +22,7 @@ const AboutSection = () => {
               viewport={{ once: true }}
               className="flex items-center gap-4"
             >
-              <span className="text-zinc-500 font-medium text-[10px] uppercase tracking-[0.4em]">
+              <span className="text-[#98989F] font-medium text-[10px] uppercase tracking-[0.4em]">
                 01 // Perspective
               </span>
               <div className="h-px w-12 bg-zinc-800" />
@@ -72,17 +71,22 @@ const AboutSection = () => {
                 <p>
                   Perjalanan saya di industri IT dimulai sebagai seorang{" "}
                   <span className="text-zinc-200">Fresh Graduate</span> yang
-                  belajar secara <span className="text-zinc-200">otodidak</span>.
-                  Didorong oleh rasa penasaran mendalam, saya memantapkan fundamental di{" "}
+                  belajar secara <span className="text-zinc-200">otodidak</span>
+                  . Didorong oleh rasa penasaran mendalam, saya memantapkan
+                  fundamental di{" "}
                   <span className="text-zinc-200 italic">
                     Purwadhika Digital Technology School
-                  </span>.
+                  </span>
+                  .
                 </p>
 
                 <p>
-                  Sebagai <span className="text-white">Full-stack Web Developer</span>,
-                  fokus saya adalah keseimbangan antara <span className="italic">clean code</span>, 
-                  performa efisien, dan antarmuka intuitif untuk pengalaman digital yang luar biasa.
+                  Sebagai{" "}
+                  <span className="text-white">Full-stack Web Developer</span>,
+                  fokus saya adalah keseimbangan antara{" "}
+                  <span className="italic">clean code</span>, performa efisien,
+                  dan antarmuka intuitif untuk pengalaman digital yang luar
+                  biasa.
                 </p>
               </div>
             </motion.div>
@@ -100,7 +104,7 @@ const AboutSection = () => {
                 >
                   {/* Judul Kategori Skill */}
                   <div className="flex items-center gap-4">
-                    <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-zinc-600">
+                    <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-[#9797A0]">
                       {cat.title}
                     </span>
                     <div className="h-px flex-1 bg-zinc-900/50" />
@@ -132,7 +136,7 @@ const AboutSection = () => {
                 onClick={() => toast.success("Resume coming soon!")}
                 className="group flex items-center gap-8 py-4 border-t border-zinc-900 w-full"
               >
-                <span className="text-xs font-medium text-zinc-500 tracking-[0.3em] uppercase">
+                <span className="text-xs font-medium text-[#98989F] tracking-[0.3em] uppercase">
                   Download Full CV
                 </span>
                 {/* Icon Circle dengan Animasi Scale */}
@@ -141,7 +145,7 @@ const AboutSection = () => {
                   transition={{ duration: 4, repeat: Infinity }}
                   className="ml-auto size-10 rounded-full border border-zinc-800 flex items-center justify-center group-hover:border-zinc-500 transition-colors"
                 >
-                  <ArrowUpRight size={16} className="text-zinc-500" />
+                  <ArrowUpRight size={16} className="text-[#98989F]" />
                 </motion.div>
               </button>
             </motion.div>

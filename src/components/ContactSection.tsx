@@ -4,28 +4,29 @@ import { ContactInput, ContactButton } from "./contact/ContactFields";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="w-full py-20 md:py-48 bg-[#050505] text-white overflow-hidden">
+    <section
+      id="contact"
+      className="w-full py-20 md:py-48 bg-[#050505] text-white overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6">
-        
         {/* --- [1] SECTION LABEL --- */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="flex items-center gap-4 mb-16 md:mb-24"
         >
-          <span className="text-zinc-500 font-medium text-[9px] md:text-[10px] uppercase tracking-[0.5em]">
+          <span className="text-[#98989F] font-medium text-[9px] md:text-[10px] uppercase tracking-[0.5em]">
             03 // Get In Touch
           </span>
           <div className="h-px flex-1 bg-zinc-900/50" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24">
-          
           {/* --- [2] LEFT SIDE: TITLE & FORM --- */}
           <div className="lg:col-span-8 space-y-12 md:space-y-20">
             {/* Headline masif dengan fluid typography (menyesuaikan ukuran layar) */}
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -41,7 +42,7 @@ const ContactSection = () => {
             </motion.h2>
 
             {/* Input Form Fields */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -60,12 +61,11 @@ const ContactSection = () => {
           {/* --- [3] RIGHT SIDE: INFO & SOCIALS --- */}
           {/* Layout fleksibel: Vertikal di mobile, sejajar di desktop */}
           <div className="lg:col-span-4 flex flex-col justify-between space-y-20 lg:space-y-0 border-t border-zinc-900/50 lg:border-none pt-16 lg:pt-0">
-            
             {/* Links Kontak Langsung */}
             <div className="space-y-10 md:space-y-16 text-left">
               {contactInfo.map((info, idx) => (
                 <div key={idx} className="space-y-2 group cursor-pointer">
-                  <p className="text-[9px] font-medium text-zinc-600 uppercase tracking-[0.3em]">
+                  <p className="text-[9px] font-medium text-[#9797A0] uppercase tracking-[0.3em]">
                     // {info.label}
                   </p>
                   <a
@@ -81,7 +81,7 @@ const ContactSection = () => {
             {/* Social Media & Micro-Footer */}
             <div className="space-y-10">
               <div className="flex flex-col gap-6">
-                <p className="text-[9px] font-medium text-zinc-500 uppercase tracking-[0.4em]">
+                <p className="text-[9px] font-medium text-[#98989F] uppercase tracking-[0.4em]">
                   Follow the journey
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-3">
@@ -100,7 +100,7 @@ const ContactSection = () => {
 
               {/* Copyright Tag */}
               <div className="pt-10 border-t border-zinc-900/30">
-                <p className="text-[8px] font-medium text-zinc-600 uppercase tracking-[0.3em] leading-relaxed">
+                <p className="text-[8px] font-medium text-[#9797A0] uppercase tracking-[0.3em] leading-relaxed">
                   © 2026 Akmal Dzakwan. <br />
                   Specializing in Full-stack Precision.
                 </p>
