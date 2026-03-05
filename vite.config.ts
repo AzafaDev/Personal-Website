@@ -3,21 +3,18 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/", // Root path
   plugins: [
     react(),
     tailwindcss(),
   ],
   build: {
-    outDir: "dist",
-    assetsDir: "assets",
-    sourcemap: false, // Biar build lebih enteng
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
-        // Jangan manual chunks dulu, biarin Vite yang nentuin hash-nya
-        entryFileNames: `assets/[name]-[hash].js`,
-        chunkFileNames: `assets/[name]-[hash].js`,
-        assetFileNames: `assets/[name]-[hash].[ext]`
+        entryFileNames: `assets/[name].js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: `assets/[name].[ext]`
       }
     }
   }
