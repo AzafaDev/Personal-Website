@@ -133,6 +133,7 @@ const AboutSection = () => {
               className="pt-6"
             >
               <button
+                aria-label="button"
                 onClick={() => toast.success("Resume coming soon!")}
                 className="group flex items-center gap-8 py-4 border-t border-zinc-900 w-full"
               >

@@ -72,7 +72,10 @@ const ProjectSection = () => {
           viewport={{ once: true }}
           className="mt-32 border-t border-zinc-900/50 pt-12 flex justify-center"
         >
-          <button className="group flex items-center gap-6 text-[10px] font-medium tracking-[0.4em] uppercase text-[#98989F] hover:text-white transition-all">
+          <button
+            aria-label="button"
+            className="group flex items-center gap-6 text-[10px] font-medium tracking-[0.4em] uppercase text-[#98989F] hover:text-white transition-all"
+          >
             Explore All Projects
             <div className="size-10 rounded-full border border-zinc-900 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-500">
               <ArrowUpRight

@@ -76,6 +76,7 @@ const Navbar = () => {
             <div className="flex gap-8">
               {list.map((item, index) => (
                 <button
+                  aria-label="button"
                   key={index}
                   onClick={() => handleNavClick(item.link)}
                   className="text-sm font-medium text-zinc-400 hover:text-white transition-all relative group"
@@ -105,6 +106,7 @@ const Navbar = () => {
 
           {/* Toggle Menu Mobile */}
           <button
+            aria-label="button"
             className="md:hidden text-white p-2"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -126,6 +128,7 @@ const Navbar = () => {
             <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col gap-5 shadow-2xl">
               {list.map((item, index) => (
                 <button
+                  aria-label="button"
                   key={index}
                   onClick={() => handleNavClick(item.link)}
                   className="text-left text-lg font-bold text-zinc-400 border-b border-zinc-800/50 pb-3 hover:text-white transition-colors"

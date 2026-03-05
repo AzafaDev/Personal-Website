@@ -41,6 +41,7 @@ export const ContactInput = ({
 
 export const ContactButton = () => (
   <button
+    aria-label="button"
     aria-label="send message"
     // Feedback sementara menggunakan React Hot Toast
     onClick={() => toast.error("Mail server coming soon! 🚀")}
