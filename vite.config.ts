@@ -9,13 +9,17 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    cssInjectedByJsPlugin.default || cssInjectedByJsPlugin,
+    cssInjectedByJsPlugin.default
+      ? cssInjectedByJsPlugin.default()
+      : cssInjectedByJsPlugin(),
   ],
   build: {
     rollupOptions: {
       output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "framer-motion", "lucide-react"],
+        },
       },
     },
-    assetsDir: "assets",
   },
 });
