@@ -24,7 +24,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5 }}
-              className="flex items-center justify-center lg:justify-start gap-4 text-[#9797A0] tracking-[0.4em] text-[10px] uppercase font-medium"
+              className="flex items-center justify-center lg:justify-start gap-4 text-white tracking-[0.4em] text-[10px] uppercase font-medium"
             >
               <span className="w-10 h-px bg-zinc-800" />
               Software Engineer
@@ -67,7 +67,7 @@ const HeroSection = () => {
               animate={{ opacity: [0.4, 1, 0.4] }}
               transition={{ duration: 4, repeat: Infinity }}
               href="#portfolio"
-              className="group flex items-center gap-4 text-[10px] font-medium tracking-[0.3em] uppercase text-zinc-400 hover:text-white transition-colors"
+              className="group flex items-center gap-4 text-[10px] font-medium tracking-[0.3em] uppercase text-white"
             >
               View Projects{" "}
               <ArrowRight
