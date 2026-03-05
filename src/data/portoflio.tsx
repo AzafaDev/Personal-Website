@@ -195,9 +195,9 @@ export const socials = [
   { name: "Github", link: "https://github.com/AzafaDev" },
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/akmal-dzakwan-faiz",
+    link: "https://www.linkedin.com/in/akmal-dzakwan-faiz-0bb98839b/",
   },
-  { name: "Instagram", link: "https://www.instagram.com/akmaldz.dev" },
+  { name: "Instagram", link: "https://www.instagram.com/akmldz?utm_source=qr&igsh=MWtkZ3BldTRndzhxNw==" },
 ];
 
 export const experiences = [
@@ -234,7 +234,7 @@ export const projects = [
       "Asisten cerdas dengan fitur streaming respons menggunakan OpenAI API untuk interaksi pengguna yang lebih natural dan real-time.",
     tech: ["Next.js", "Tailwind", "Firebase"],
     image: "/AI.webp",
-    link: "#",
+    link: "/#",
   },
   {
     title: "Task Management Tool",
@@ -243,7 +243,7 @@ export const projects = [
       "Solusi kolaborasi tim dengan fitur drag-and-drop Kanban yang dioptimalkan untuk produktivitas developer.",
     tech: ["TypeScript", "Zustand", "Framer"],
     image: "/Management.webp",
-    link: "#",
+    link: "/#",
   },
 ];
 

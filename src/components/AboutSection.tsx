@@ -1,4 +1,3 @@
-// src/components/sections/About/AboutSection.tsx
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import toast from "react-hot-toast";
@@ -14,8 +13,10 @@ const AboutSection = () => {
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-12">
-          {/* --- KIRI: HEADLINE & VISUAL --- */}
+          
+          {/* --- BAGIAN KIRI: HEADLINE & VISUAL DEKORATIF --- */}
           <div className="lg:col-span-5 space-y-12">
+            {/* Label Penomoran Section */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -25,9 +26,10 @@ const AboutSection = () => {
               <span className="text-zinc-500 font-medium text-[10px] uppercase tracking-[0.4em]">
                 01 // Perspective
               </span>
-              <div className="h-[1px] w-12 bg-zinc-800" />
+              <div className="h-px w-12 bg-zinc-800" />
             </motion.div>
 
+            {/* Judul Utama dengan Animasi Warna */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +39,6 @@ const AboutSection = () => {
             >
               Driven by <br />
               <motion.span
-                // Animasi warna teks yang mengalir pelan
                 animate={{ color: ["#3f3f46", "#fafafa", "#3f3f46"] }}
                 transition={{ duration: 8, repeat: Infinity }}
                 className="italic font-extralight text-5xl md:text-6xl"
@@ -46,11 +47,13 @@ const AboutSection = () => {
               </motion.span>
             </motion.h2>
 
+            {/* Komponen Visual (Graphic/Image) */}
             <AboutVisual />
           </div>
 
-          {/* --- KANAN: NARRATIVE & SKILLS --- */}
+          {/* --- BAGIAN KANAN: NARASI & SKILL GRID --- */}
           <div className="lg:col-span-7 space-y-16">
+            {/* Teks Deskripsi Diri */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -69,29 +72,22 @@ const AboutSection = () => {
                 <p>
                   Perjalanan saya di industri IT dimulai sebagai seorang{" "}
                   <span className="text-zinc-200">Fresh Graduate</span> yang
-                  belajar secara <span className="text-zinc-200">otodidak</span>
-                  . Didorong oleh rasa penasaran mendalam, saya kemudian
-                  memantapkan fundamental dan profesionalisme saya melalui
-                  program intensif di{" "}
+                  belajar secara <span className="text-zinc-200">otodidak</span>.
+                  Didorong oleh rasa penasaran mendalam, saya memantapkan fundamental di{" "}
                   <span className="text-zinc-200 italic">
                     Purwadhika Digital Technology School
-                  </span>
-                  .
+                  </span>.
                 </p>
 
                 <p>
-                  Sebagai seorang{" "}
-                  <span className="text-white">Full-stack Web Developer</span>,
-                  fokus utama saya adalah menciptakan keseimbangan antara{" "}
-                  <span className="italic">clean code</span>, performa yang
-                  efisien, dan antarmuka yang intuitif. Saya percaya bahwa
-                  setiap baris kode harus memberikan nilai nyata dan pengalaman
-                  digital yang luar biasa bagi penggunanya.
+                  Sebagai <span className="text-white">Full-stack Web Developer</span>,
+                  fokus saya adalah keseimbangan antara <span className="italic">clean code</span>, 
+                  performa efisien, dan antarmuka intuitif untuk pengalaman digital yang luar biasa.
                 </p>
               </div>
             </motion.div>
 
-            {/* Tech Stack Categories dengan Auto-Reveal */}
+            {/* Iterasi Kategori Tech Stack */}
             <div className="space-y-12">
               {categories.map((cat, idx) => (
                 <motion.div
@@ -102,21 +98,22 @@ const AboutSection = () => {
                   transition={{ delay: 0.2 * idx, duration: 0.8 }}
                   className="space-y-6"
                 >
+                  {/* Judul Kategori Skill */}
                   <div className="flex items-center gap-4">
                     <span className="text-[10px] font-medium tracking-[0.3em] uppercase text-zinc-600">
                       {cat.title}
                     </span>
-                    <div className="h-[1px] flex-1 bg-zinc-900/50" />
+                    <div className="h-px flex-1 bg-zinc-900/50" />
                   </div>
 
+                  {/* Grid Kartu Skill */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {cat.skills.map((skill, sIdx) => (
-                      // Tambahkan index total agar delay tiap card unik
                       <SkillCard
                         key={sIdx}
                         icon={skill.icon}
                         name={skill.name}
-                        index={sIdx + idx * 4}
+                        index={sIdx + idx * 4} // Delay unik tiap card
                       />
                     ))}
                   </div>
@@ -124,7 +121,7 @@ const AboutSection = () => {
               ))}
             </div>
 
-            {/* Resume Button dengan Subtle Bounce */}
+            {/* --- ACTION: DOWNLOAD CV --- */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -138,10 +135,11 @@ const AboutSection = () => {
                 <span className="text-xs font-medium text-zinc-500 tracking-[0.3em] uppercase">
                   Download Full CV
                 </span>
+                {/* Icon Circle dengan Animasi Scale */}
                 <motion.div
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="ml-auto size-10 rounded-full border border-zinc-800 flex items-center justify-center"
+                  className="ml-auto size-10 rounded-full border border-zinc-800 flex items-center justify-center group-hover:border-zinc-500 transition-colors"
                 >
                   <ArrowUpRight size={16} className="text-zinc-500" />
                 </motion.div>

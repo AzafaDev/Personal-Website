@@ -1,4 +1,3 @@
-// src/components/sections/Skills/skills/TechRow.tsx
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { techIcons } from "../../data/portoflio";
@@ -13,14 +12,15 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
   >
     <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0">
       
-      {/* INDEX - Tetap sembunyi di mobile biar ga penuh */}
+      {/* --- [1] INDEX NUMBER --- */}
+      {/* Muncul hanya di desktop untuk menjaga kebersihan layout mobile */}
       <div className="lg:col-span-1 hidden lg:flex">
         <span className="font-light text-zinc-700 text-sm group-hover:text-white transition-colors duration-500">
           0{index + 1}
         </span>
       </div>
 
-      {/* KATEGORI & DESKRIPSI */}
+      {/* --- [2] CATEGORY & DESCRIPTION --- */}
       <div className="lg:col-span-4">
         <h3 className="text-2xl md:text-4xl font-light tracking-tight mb-2 md:group-hover:translate-x-3 transition-transform duration-700 uppercase">
           {group.category}
@@ -30,10 +30,11 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
         </p>
       </div>
 
-      {/* ICON GRID - Adaptive for Mobile */}
+      {/* --- [3] DYNAMIC ICON GRID --- */}
       <div className="lg:col-span-6 mt-4 md:mt-0">
         <div className="flex flex-wrap gap-5 md:gap-10 lg:justify-end">
           {group.skills.map((skill: any, idx: number) => {
+            // Logika pemetaan string nama ke key icon SVG
             const iconKey = skill.name.toLowerCase().replace(/[.\s-]/g, "") as keyof typeof techIcons;
             const IconSVG = techIcons[iconKey];
 
@@ -49,9 +50,9 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
                 }}
                 className="flex flex-col items-center gap-3"
               >
-                {/* DI SINI KUNCINYA: 
-                   Mobile: opacity-80 & grayscale-0 (langsung nyala)
-                   Desktop: opacity-30 & grayscale (nunggu hover)
+                {/* STRATEGI ADAPTIVE:
+                  - Mobile: Icon langsung menyala (Grayscale-0) agar user HP langsung tahu teknologinya.
+                  - Desktop: Default redup (Grayscale), menyala saat row di-hover untuk fokus visual.
                 */}
                 <div className="size-6 md:size-7 transition-all duration-700 
                   opacity-80 grayscale-0 
@@ -62,7 +63,7 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
                   </div>
                 </div>
 
-                {/* Teks Nama: Di mobile kita buat muncul tapi agak transparan */}
+                {/* Nama Skill: Muncul halus di mobile, muncul saat hover di desktop */}
                 <span className="text-[8px] font-medium uppercase tracking-[0.2em] 
                   text-zinc-500 opacity-60
                   md:opacity-0 md:group-hover:opacity-100 md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-700"
@@ -75,7 +76,8 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
         </div>
       </div>
 
-      {/* ARROW - Sembunyi di mobile biar ga menu-menuhin layar */}
+      {/* --- [4] DECORATIVE ARROW --- */}
+      {/* Icon interaktif yang berputar & muncul saat hover (Desktop Only) */}
       <div className="hidden lg:col-span-1 lg:flex justify-end pr-4">
         <div className="size-10 rounded-full border border-zinc-900 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:border-zinc-700 transition-all duration-700">
           <ArrowRight className="text-zinc-500 group-hover:text-white -rotate-45 group-hover:rotate-0 transition-transform duration-700" size={16} />
@@ -83,7 +85,7 @@ export const TechRow = ({ group, index }: { group: any, index: number }) => (
       </div>
     </div>
 
-    {/* ANIMASI GARIS BAWAH - Tetap ada di hover desktop */}
-    <div className="hidden md:block absolute bottom-0 left-0 h-[1px] w-0 bg-zinc-500 transition-all duration-1000 ease-out group-hover:w-full" />
+    {/* Garis bawah animasi (Desktop Hover Effect) */}
+    <div className="hidden md:block absolute bottom-0 left-0 h-px w-0 bg-zinc-500 transition-all duration-1000 ease-out group-hover:w-full" />
   </motion.div>
 );

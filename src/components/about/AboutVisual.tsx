@@ -1,4 +1,3 @@
-// src/components/sections/About/about/AboutVisual.tsx
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 
@@ -9,32 +8,37 @@ export const AboutVisual = () => (
     viewport={{ once: true }}
     className="hidden lg:block relative group max-w-sm"
   >
-    {/* Minimalist Accent Frame - Border luar tipis */}
+    {/* --- LAYER 1: ACCENT FRAME --- */}
+    {/* Garis tepi tipis di luar kontainer utama untuk efek kedalaman */}
     <div className="absolute -inset-4 border border-zinc-900 rounded-2xl pointer-events-none" />
 
-    {/* Main Image Container */}
-    <div className="relative aspect-[4/5] bg-zinc-950 rounded-xl overflow-hidden border border-zinc-900 shadow-2xl">
+    {/* --- LAYER 2: IMAGE CONTAINER --- */}
+    <div className="relative aspect-4/5 bg-zinc-950 rounded-xl overflow-hidden border border-zinc-900 shadow-2xl">
       <img
         src="/workspace.webp"
         alt="Workspace"
-        // Grayscale dihapus, brightness disesuaikan agar warna asli keluar tapi tidak mencolok
+        // Warna asli dipertahankan dengan brightness yang seimbang
         className="w-full h-full object-cover brightness-[0.85] contrast-[1.05] group-hover:brightness-100 transition-all duration-1000 ease-in-out"
       />
       
-      {/* Soft Vignette Overlay - Menjaga agar bagian bawah tetap gelap untuk estetika */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90" />
+      {/* Overlay gradasi gelap (Vignette) di bagian bawah */}
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-90" />
     </div>
 
-    {/* Floating Alumni Badge - Tetap monokrom agar elegan */}
+    {/* --- LAYER 3: FLOATING BADGE (Purwadhika) --- */}
+    {/* Elemen melayang dengan animasi y-axis yang halus */}
     <motion.div 
       animate={{ y: [0, -8, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       className="absolute -bottom-6 -right-6 bg-[#0A0A0A] border border-zinc-800 p-5 rounded-xl shadow-2xl"
     >
       <div className="flex items-center gap-4">
+        {/* Ikon Graduation */}
         <div className="size-8 rounded-lg bg-zinc-900 flex items-center justify-center">
           <GraduationCap className="text-zinc-400" size={18} />
         </div>
+        
+        {/* Detail Teks Alumni */}
         <div className="flex flex-col">
           <span className="text-[9px] font-bold uppercase text-zinc-500 tracking-tighter">
             Alumni

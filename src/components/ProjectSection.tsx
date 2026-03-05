@@ -9,7 +9,7 @@ const ProjectSection = () => {
     <section id="portfolio" className="w-full py-24 md:py-40 bg-[#050505] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* --- HEADER SECTION --- */}
+        {/* --- [1] HEADER SECTION --- */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24 md:mb-32">
           <div className="space-y-6">
             <motion.div 
@@ -54,14 +54,14 @@ const ProjectSection = () => {
           </motion.div>
         </div>
 
-        {/* --- GRID PROJECT --- */}
+        {/* --- [2] PROJECT GRID --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-24">
           {projects.map((project, index) => (
             <ProjectCard project={project} key={index} index={index} />
           ))}
         </div>
 
-        {/* --- BOTTOM CTA --- */}
+        {/* --- [3] BOTTOM CTA --- */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

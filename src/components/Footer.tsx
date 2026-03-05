@@ -1,4 +1,3 @@
-// src/components/sections/Footer.tsx
 import { motion } from "framer-motion";
 import { Terminal, ArrowUp } from "lucide-react";
 
@@ -14,12 +13,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
           
-          {/* Brand Section - Subtle Pulse Animation */}
+          {/* --- [1] BRAND SECTION --- */}
           <div className="md:col-span-5 space-y-8">
             <div className="flex items-center gap-3 group cursor-default">
               <div className="relative p-2 border border-zinc-800 bg-zinc-950 overflow-hidden">
                 <Terminal className="text-white size-4 relative z-10" />
-                {/* Non-hover animation: Subtle scanning effect */}
+                {/* Scanning Effect: Memberikan kesan sistem yang 'aktif' secara konstan */}
                 <motion.div 
                   animate={{ y: [-20, 20] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
@@ -36,7 +35,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigation - Minimalist Hover */}
+          {/* --- [2] SITEMAP NAVIGATION --- */}
           <div className="md:col-span-3">
             <p className="text-[9px] font-medium uppercase tracking-[0.4em] text-zinc-600 mb-8">
               // Sitemap
@@ -48,7 +47,8 @@ const Footer = () => {
                     href={item === "Home" ? "/" : `/#${item.toLowerCase()}`}
                     className="text-[10px] font-medium uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-all duration-500 flex items-center group gap-2"
                   >
-                    <span className="w-0 h-[1px] bg-white group-hover:w-4 transition-all duration-500" />
+                    {/* Line Indicator: Muncul saat link di-hover */}
+                    <span className="w-0 h-px bg-white group-hover:w-4 transition-all duration-500" />
                     {item}
                   </a>
                 </li>
@@ -56,7 +56,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Office - High Contrast Address */}
+          {/* --- [3] LOCATION & AVAILABILITY --- */}
           <div className="md:col-span-4">
             <p className="text-[9px] font-medium uppercase tracking-[0.4em] text-zinc-600 mb-8">
               // Availability
@@ -78,13 +78,15 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar - Brutalist Layout */}
+        {/* --- [4] BOTTOM BAR --- */}
         <div className="pt-10 border-t border-zinc-900/50 flex flex-col md:flex-row justify-between items-center gap-8">
+          {/* Copyright & Live Status Indicator */}
           <div className="text-[9px] font-medium text-zinc-600 uppercase tracking-[0.3em] flex items-center gap-2">
              <span className="size-1 rounded-full bg-zinc-800 animate-pulse" />
              © {currentYear} Azafa Archive — Akmal Dzakwan Faiz
           </div>
 
+          {/* Scroll to Top Button */}
           <motion.button
             whileHover={{ y: -5 }}
             onClick={scrollToTop}

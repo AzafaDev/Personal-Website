@@ -1,4 +1,3 @@
-// src/components/layout/Navbar.tsx
 import { Terminal, Menu, X, ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,12 +8,14 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
 
+  // Efek pendeteksi scroll untuk ganti style navbar
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Menu navigasi
   const list = [
     { name: "Home", link: "/" },
     { name: "About", link: "/#about" },
@@ -23,6 +24,7 @@ const Navbar = () => {
     { name: "Contact", link: "/#contact" },
   ];
 
+  // Logika navigasi (Scroll ke ID atau pindah halaman)
   const handleNavClick = (link: string) => {
     setIsOpen(false);
     if (link.includes("#")) {
@@ -38,10 +40,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+    <nav className={`fixed top-0 left-0 right-0 z-100 transition-all duration-500 ${
       scrolled ? "py-4 md:py-6" : "py-8"
     }`}>
       <div className="max-w-7xl mx-auto px-6">
+        {/* Container Utama Navbar */}
         <motion.div 
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -52,7 +55,7 @@ const Navbar = () => {
           }`}
         >
           
-          {/* LOGO: Hover Scale */}
+          {/* Logo & Brand */}
           <motion.div 
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -67,7 +70,7 @@ const Navbar = () => {
             </span>
           </motion.div>
 
-          {/* DESKTOP MENU */}
+          {/* Navigasi Desktop */}
           <div className="hidden md:flex items-center gap-10">
             <div className="flex gap-8">
               {list.map((item, index) => (
@@ -77,13 +80,13 @@ const Navbar = () => {
                   className="text-sm font-medium text-zinc-400 hover:text-white transition-all relative group"
                 >
                   {item.name}
-                  {/* Underline Animasi */}
+                  {/* Efek garis bawah saat hover */}
                   <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full" />
                 </button>
               ))}
             </div>
 
-            {/* CTA BUTTON: Hover Arrow Rotate */}
+            {/* Tombol CTA (Hire Me) */}
             <motion.a
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -96,7 +99,7 @@ const Navbar = () => {
             </motion.a>
           </div>
 
-          {/* MOBILE TOGGLE: Simple Icon Switch */}
+          {/* Toggle Menu Mobile */}
           <button
             className="md:hidden text-white p-2"
             onClick={() => setIsOpen(!isOpen)}
@@ -106,7 +109,7 @@ const Navbar = () => {
         </motion.div>
       </div>
 
-      {/* MOBILE MENU: Smooth Dropdown */}
+      {/* Dropdown Menu Mobile */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

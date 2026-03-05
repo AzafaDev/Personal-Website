@@ -1,4 +1,3 @@
-// src/components/sections/Skills/TechSection.tsx
 import { motion } from "framer-motion";
 import { technologies } from "../data/portoflio";
 import { TechRow } from "./skills/TechRow";
@@ -8,8 +7,9 @@ const TechSection = () => {
     <section className="w-full py-24 md:py-40 bg-[#050505] text-white overflow-hidden" id="skills">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* --- [HEADER SECTION] --- */}
+        {/* --- [SECTION HEADER] --- */}
         <div className="mb-20 md:mb-32">
+          {/* Label Kecil (Sub-title) */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -22,6 +22,7 @@ const TechSection = () => {
             </span>
           </motion.div>
 
+          {/* Headline Besar dengan Efek Stroke */}
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -32,17 +33,22 @@ const TechSection = () => {
             Tech{" "}
             <span
               className="italic font-extralight text-zinc-800"
-              style={{ WebkitTextStroke: "1px #27272a" }} // Zinc-800 stroke
+              style={{ WebkitTextStroke: "1px #27272a" }} // Membuat teks outline transparan
             >
               Stack.
             </span>
           </motion.h2>
         </div>
 
-        {/* --- [LIST TEKNOLOGI] --- */}
+        {/* --- [TECHNOLOGY LIST] --- */}
+        {/* Render baris teknologi secara dinamis dari data */}
         <div className="flex flex-col border-t border-zinc-900/50">
           {technologies.map((group, index) => (
-            <TechRow key={group.id} group={group} index={index} />
+            <TechRow 
+              key={group.id} 
+              group={group} 
+              index={index} // Digunakan untuk stagger delay antar baris
+            />
           ))}
         </div>
       </div>
