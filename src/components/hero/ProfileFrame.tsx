@@ -6,7 +6,7 @@ export const ProfileFrame = () => {
       {/* --- LAYER 1: OUTER DECORATION --- */}
       {/* Border luar yang memberikan kesan "Frame" tambahan */}
       <div className="absolute -inset-8 border border-zinc-900/40 rounded-[2.5rem] pointer-events-none" />
-      
+
       {/* --- LAYER 2: MAIN FRAME CONTAINER --- */}
       {/* Menggunakan animasi 'floating' naik-turun secara halus */}
       <motion.div
@@ -17,16 +17,21 @@ export const ProfileFrame = () => {
         {/* --- LAYER 3: PROFILE IMAGE --- */}
         {/* Kontras dan brightness disesuaikan untuk mempertahankan warna asli */}
         <img
-          src="/profile.webp"
+          src="/WhatsApp Image 2026-03-09 at 21.07.07.jpeg"
           alt="Akmal Dzakwan"
-          className="w-full h-full object-cover brightness-[0.9] contrast-[1.05] scale-105"
+          className="w-full h-full object-cover grayscale brightness-[0.9] contrast-[1.05] scale-105"
         />
 
         {/* --- LAYER 4: PREMIUM SHIMMER EFFECT --- */}
         {/* Efek kilatan cahaya tipis yang lewat secara berkala */}
-        <motion.div 
+        <motion.div
           animate={{ x: ["-100%", "200%"] }}
-          transition={{ duration: 7, repeat: Infinity, repeatDelay: 4, ease: "linear" }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            repeatDelay: 4,
+            ease: "linear",
+          }}
           className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent -skew-x-12"
         />
 
@@ -38,7 +43,7 @@ export const ProfileFrame = () => {
         {/* Detail kecil berupa dot berdenyut (pulsing) dan timestamp sistem */}
         <div className="absolute bottom-8 left-8">
           <div className="flex items-center gap-3">
-            <motion.div 
+            <motion.div
               animate={{ opacity: [0.3, 0.8, 0.3] }}
               transition={{ duration: 4, repeat: Infinity }}
               className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.4)]"
