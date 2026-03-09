@@ -54,9 +54,10 @@ const HeroSection = () => {
               transition={{ duration: 2, delay: 0.5 }}
               className="text-[#98989F] text-lg md:text-xl max-w-md mx-auto lg:mx-0 font-light leading-relaxed tracking-tight"
             >
-              Building <span className="text-zinc-200">minimalist</span> digital
-              architecture with precision and{" "}
-              <span className="text-zinc-200">performance</span>.
+              Full-stack engineer focused on building{" "}
+              <span className="text-white">scalable</span> and{" "}
+              <span className="text-white">high-performance</span> web
+              applications.
             </motion.p>
           </div>
 

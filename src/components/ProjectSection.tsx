@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "../data/portoflio";
 import { ProjectCard } from "./project/ProjectCard";
+import toast from "react-hot-toast";
 
 const ProjectSection = () => {
   return (
@@ -75,6 +76,7 @@ const ProjectSection = () => {
           <button
             aria-label="button"
             className="group flex items-center gap-6 text-[10px] font-medium tracking-[0.4em] uppercase text-[#98989F] hover:text-white transition-all"
+            onClick={() => toast.success("coming soon")}
           >
             Explore All Projects
             <div className="size-10 rounded-full border border-zinc-900 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-500">

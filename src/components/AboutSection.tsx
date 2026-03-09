@@ -69,24 +69,60 @@ const AboutSection = () => {
 
               <div className="space-y-6 text-zinc-400 font-light leading-relaxed text-lg max-w-2xl">
                 <p>
-                  Perjalanan saya di industri IT dimulai sebagai seorang{" "}
-                  <span className="text-zinc-200">Fresh Graduate</span> yang
-                  belajar secara <span className="text-zinc-200">otodidak</span>
-                  . Didorong oleh rasa penasaran mendalam, saya memantapkan
-                  fundamental di{" "}
-                  <span className="text-zinc-200 italic">
-                    Purwadhika Digital Technology School
-                  </span>
-                  .
+                  Self-taught passion meets professional expertise. My journey
+                  in web development began with curiosity about how{" "}
+                  <span className="text-zinc-200">websites actually work</span>.
+                  Growing up with a father who works as an{" "}
+                  <span className="text-zinc-200">SEO specialist</span>, I was
+                  naturally exposed to conversations about websites, traffic,
+                  and digital presence.
                 </p>
 
                 <p>
-                  Sebagai{" "}
-                  <span className="text-white">Full-stack Web Developer</span>,
-                  fokus saya adalah keseimbangan antara{" "}
-                  <span className="italic">clean code</span>, performa efisien,
-                  dan antarmuka intuitif untuk pengalaman digital yang luar
-                  biasa.
+                  Before diving into modern web frameworks, I built several
+                  real-world business websites using{" "}
+                  <span className="text-zinc-200">WordPress</span>, handling{" "}
+                  <span className="text-zinc-200">layout design</span>,{" "}
+                  <span className="text-zinc-200">theme customization</span>,{" "}
+                  <span className="text-zinc-200">SEO setup</span>, and even{" "}
+                  <span className="text-zinc-200">
+                    WhatsApp-based commerce integration
+                  </span>
+                  . This hands-on experience taught me how to turn ideas into
+                  functional digital products for clients.
+                </p>
+
+                <p>
+                  At one point, I discovered a YouTube video showcasing a
+                  website built with{" "}
+                  <span className="text-zinc-200">Next.js</span> that achieved a{" "}
+                  <span className="text-zinc-200">
+                    perfect performance score
+                  </span>
+                  . That moment sparked my deeper interest in modern web
+                  technologies, leading me to explore full-stack development
+                  through self-learning and intensive bootcamp training.
+                </p>
+
+                <p>
+                  Today, I work primarily with modern JavaScript technologies
+                  such as <span className="text-zinc-200">Next.js</span>,{" "}
+                  <span className="text-zinc-200">React</span>,{" "}
+                  <span className="text-zinc-200">Node.js</span>, and{" "}
+                  <span className="text-zinc-200">TypeScript</span>, along with
+                  tools like <span className="text-zinc-200">PostgreSQL</span>,{" "}
+                  <span className="text-zinc-200">Prisma</span>, and{" "}
+                  <span className="text-zinc-200">Tailwind</span>. I focus on
+                  writing{" "}
+                  <span className="text-zinc-200">
+                    clean, maintainable code
+                  </span>{" "}
+                  while building <span className="text-zinc-200">scalable</span>{" "}
+                  and{" "}
+                  <span className="text-zinc-200">
+                    high-performance web applications
+                  </span>
+                  .
                 </p>
               </div>
             </motion.div>
