@@ -290,7 +290,7 @@ export const projects = [
     description:
       "Company profile & catalog website dengan integrasi WhatsApp commerce untuk pemesanan langsung.",
     tech: ["WordPress", "Custom Theme", "WhatsApp Integration"],
-    image: "/tokobesibeton.webp",
+    image: "/tokobesibeton.jpg",
     link: "https://www.tokobesibeton.web.id/",
   },
   {
@@ -299,7 +299,7 @@ export const projects = [
     description:
       "Company profile website untuk bisnis kitchen set, menonjolkan portfolio dan kontak.",
     tech: ["WordPress", "Custom Theme"],
-    image: "/elips.webp",
+    image: "/elips.jpg",
     link: "https://elipskitchenset.com/",
   },
   {
@@ -308,7 +308,7 @@ export const projects = [
     description:
       "Website company profile untuk bisnis aluminium, dengan layout responsif dan modern.",
     tech: ["WordPress", "Custom Theme"],
-    image: "/suryagemilang.webp",
+    image: "/suryagemilang.jpg",
     link: "https://suryagemilangaluminium.com/",
   },
   {
@@ -317,7 +317,7 @@ export const projects = [
     description:
       "Company profile website untuk bisnis besi beton, menekankan katalog produk dan kontak.",
     tech: ["WordPress", "Custom Theme"],
-    image: "/pusatbesibeton.webp",
+    image: "/pusatbesibeton.jpg",
     link: "https://pusatbesibeton.com/",
   },
   {
@@ -326,7 +326,7 @@ export const projects = [
     description:
       "Company profile untuk bisnis besi, menampilkan produk dan informasi kontak secara profesional.",
     tech: ["WordPress", "Custom Theme"],
-    image: "/luckysteel.webp",
+    image: "/luckysteel.jpg",
     link: "https://luckysteelpremium.com/",
   },
 ];
