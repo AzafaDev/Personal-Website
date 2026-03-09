@@ -18,6 +18,7 @@ export const ProfileFrame = () => {
         {/* Kontras dan brightness disesuaikan untuk mempertahankan warna asli */}
         <img
           src="/WhatsApp Image 2026-03-09 at 21.07.07.jpeg"
+          
           alt="Akmal Dzakwan"
           className="w-full h-full object-cover grayscale brightness-[0.9] contrast-[1.05] scale-105"
         />
