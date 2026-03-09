@@ -64,8 +64,6 @@ export const ProjectCard = ({
           className="h-full w-full object-cover transition-all duration-1000 ease-in-out
                      brightness-[0.85] 
                      md:brightness-[0.5] md:group-hover:brightness-[1] md:group-hover:scale-110"
-          width={831}
-          height={395}
         />
 
         <div className="absolute inset-0 bg-black/20 md:opacity-0 md:group-hover:opacity-40 transition-opacity duration-700" />
